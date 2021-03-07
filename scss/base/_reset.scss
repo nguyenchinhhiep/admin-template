@@ -1,0 +1,41 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+}
+
+// List style
+ul {
+  list-style: none;
+}
+
+// Link
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Button, Inputs
+button, input {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--text-primary);
+}

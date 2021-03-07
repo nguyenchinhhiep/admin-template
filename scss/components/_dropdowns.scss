@@ -1,0 +1,22 @@
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-header, .dropdown-footer {
+    padding: 15px 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    min-width: 10rem;
+    top: 100%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}

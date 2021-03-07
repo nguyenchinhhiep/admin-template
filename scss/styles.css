@@ -1,0 +1,466 @@
+/*
+This file is used to contain all abstracts imports.
+*/
+/* Variables */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --font-family: 'Inter', sans-serif;
+  --accent: #7774e7;
+  --success: #37c936;
+  --danger: #f3103c;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --white: #ffffff;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+}
+
+/*
+    Display
+ */
+header, .navbar, .navbar-left, .navbar-search-button, .navbar-right, .navbar-notification > a, .dropdown-notification .notification-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*
+      Flex direction
+   */
+/*
+      Flex wrap
+   */
+/*
+      Flex flow
+   */
+/*
+      Order
+   */
+/*
+      Flex grow
+   */
+/*
+      Flex shrink
+   */
+/*
+      Flex basis
+   */
+/*
+      Flex
+   */
+/*
+      Justify content
+   */
+.navbar-search-button, .navbar-notification > a {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+.navbar {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/*
+      Align items
+   */
+.navbar-left, .navbar-search-button, .navbar-notification > a {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+/*
+      Align self
+   */
+.navbar-search {
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/*
+      Align content
+   */
+/*
+This file is used to contain all base imports.
+*/
+body {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+.font-weight-medium, .navbar-notification-badge {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-weight-semibold, .dropdown-notification .notification-header {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-weight-extrabold, .navbar-brand h1 {
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--text-primary);
+}
+
+input:-ms-input-placeholder {
+  color: var(--text-primary);
+}
+
+input::-ms-input-placeholder {
+  color: var(--text-primary);
+}
+
+input::placeholder {
+  color: var(--text-primary);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+/*
+This file is used to contain all components imports.
+*/
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-header, .dropdown-footer {
+  padding: 15px 20px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  min-width: 10rem;
+  top: 100%;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/*
+This file is used to contain all layouts imports.
+*/
+/* Header */
+.toggle-sidebar, .navbar-notification > a {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.toggle-sidebar:active, .navbar-notification > a:active, .dropdown-notification .notification-item:hover {
+  background-color: var(--bg-search);
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: inherit;
+  z-index: 99;
+}
+
+header i {
+  font-size: 24px;
+}
+
+.navbar {
+  -webkit-box-flex: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.toggle-sidebar {
+  margin-right: 15px;
+}
+
+.navbar-search {
+  max-width: 400px;
+  width: 100%;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--bg-search);
+  border-radius: 4px;
+}
+
+.navbar-search-button {
+  -webkit-flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 40px;
+  height: 35px;
+  color: var(--text-primary);
+}
+
+.navbar-search-button i {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.navbar-search-input {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 8px 15px 8px 0;
+  font-size: 14px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.navbar-notification {
+  margin-right: 15px;
+}
+
+.navbar-notification-badge {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 10px;
+  background-color: var(--danger);
+  color: var(--white);
+  padding: 3px 5.5px;
+  border-radius: 50px;
+}
+
+.navbar-profile img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.dropdown-notification {
+  width: 350px;
+  right: 0;
+}
+
+.dropdown-notification .notification-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 16px;
+}
+
+.dropdown-notification .notification-header a {
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.dropdown-notification .notification-list {
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.dropdown-notification .notification-item a {
+  padding: 15px 20px;
+}
+
+.dropdown-notification .notification-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown-notification .notification-info {
+  padding-left: 15px;
+}
+
+.dropdown-notification .notification-info .title {
+  margin-bottom: 5px;
+}
+
+.dropdown-notification .notification-info .sub-title {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.dropdown-notification .notification-footer {
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.dropdown-notification .notification-footer a {
+  font-size: 15px;
+  text-decoration: underline;
+  color: var(--text-secondary);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 65px;
+  border-right: 1px solid var(--border-color);
+  height: 100vh;
+  background-color: inherit;
+}
+
+.sidebar-nav {
+  width: 250px;
+}
+
+/* Layout */
+main {
+  background: var(--bg-secondary);
+  width: 100%;
+  min-height: 100vh;
+  padding: 65px 0 0 250px;
+}
+
+/*
+This file is used to contain all pages imports.
+*/
+/*
+This file is used to contain all themes imports.
+*/
+.theme-light {
+  --text-primary: #333333;
+  --text-secondary: #7e7e7e;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f7fb;
+  --bg-search: #f0f2f5;
+  --border-color: #e6ecf5;
+}
+
+.theme-dark {
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --bg-primary: #242526;
+  --bg-secondary: #18191a;
+  --bg-search: #3a3b3c;
+  --border-color: #363738;
+}
+
+/*
+This file is used to contain all vendors imports.
+*/
+/*# sourceMappingURL=styles.css.map */
