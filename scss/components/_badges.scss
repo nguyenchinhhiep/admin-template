@@ -1,0 +1,22 @@
+.badge {
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-left: 8px;
+    display: inline-block;
+    @extend .font-weight-semibold;
+
+    &.danger {
+        background-color: var(--danger);
+    }
+
+    &.success {
+        background-color: var(--success);
+    }
+
+    &.warning {
+        background-color: var(--warning);
+    }
+}

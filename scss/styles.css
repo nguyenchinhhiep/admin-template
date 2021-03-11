@@ -5,7 +5,7 @@ This file is used to contain all abstracts imports.
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 :root {
   --font-family: 'Inter', sans-serif;
-  --accent: #7774e7;
+  --accent: #3367D6;
   --success: #37c936;
   --danger: #f3103c;
   --warning: #ffc107;
@@ -17,10 +17,14 @@ This file is used to contain all abstracts imports.
   --font-weight-extra-bold: 800;
 }
 
+.dropdown-notification .notification-item:hover, .dropdown-profile .profile-item > a:hover, .dropdown-profile .profile-item > a:active, .dropdown-profile .profile-item > a:focus, .sidebar-nav .nav-item.active .nav-link, .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link:active, .sidebar-nav .nav-link:focus {
+  background-color: var(--bg-tertiary);
+}
+
 /*
     Display
  */
-header, .navbar, .navbar-left, .navbar-search-button, .navbar-right, .navbar-notification > a, .dropdown-notification .notification-item a {
+header, .navbar, .navbar-left, .navbar-search-button, .navbar-right, .navbar-notification > a, .dropdown-notification .notification-item a, .dropdown-profile .profile-item > a, .sidebar-nav .nav-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,7 +74,7 @@ header, .navbar, .navbar-left, .navbar-search-button, .navbar-right, .navbar-not
 /*
       Align items
    */
-.navbar-left, .navbar-search-button, .navbar-notification > a {
+.navbar-left, .navbar-search-button, .navbar-notification > a, .dropdown-profile .profile-item > a, .sidebar-nav .nav-link {
   -webkit-box-align: center;
   -ms-flex-align: center;
   -moz-align-items: center;
@@ -105,11 +109,11 @@ body {
   overflow-x: hidden;
 }
 
-.font-weight-medium, .navbar-notification-badge {
+.font-weight-medium, .navbar-notification-badge, .dropdown-notification .notification-header a, .dropdown-notification .notification-footer a, .sidebar-nav .nav-item.active .nav-link {
   font-weight: var(--font-weight-medium);
 }
 
-.font-weight-semibold, .dropdown-notification .notification-header {
+.font-weight-semibold, .badge, .dropdown-notification .notification-header, .sidebar-nav .nav-group .nav-group-title {
   font-weight: var(--font-weight-semi-bold);
 }
 
@@ -121,8 +125,27 @@ body {
   font-weight: var(--font-weight-extra-bold);
 }
 
-.text-secondary {
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary, .sidebar-nav .nav-group .nav-group-title {
   color: var(--text-secondary);
+}
+
+.text-uppercase, .sidebar-nav .nav-group .nav-group-title {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color-primary);
+  height: 1px;
+  overflow: hidden;
 }
 
 *, *::before, *::after {
@@ -231,16 +254,41 @@ This file is used to contain all components imports.
 .dropdown-menu {
   position: absolute;
   min-width: 10rem;
+  padding: 8px 0;
   top: 100%;
   background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color-primary);
   border-radius: 4px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: none;
 }
 
 .dropdown-menu.show {
   display: block;
+}
+
+.badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.badge.danger {
+  background-color: var(--danger);
+}
+
+.badge.success {
+  background-color: var(--success);
+}
+
+.badge.warning {
+  background-color: var(--warning);
 }
 
 /*
@@ -254,8 +302,8 @@ This file is used to contain all layouts imports.
   border-radius: 50%;
 }
 
-.toggle-sidebar:active, .navbar-notification > a:active, .dropdown-notification .notification-item:hover {
-  background-color: var(--bg-search);
+.toggle-sidebar:active, .navbar-notification > a:active {
+  background-color: var(--bg-secondary);
 }
 
 header {
@@ -265,7 +313,7 @@ header {
   width: 100%;
   height: 65px;
   padding: 10px 12px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color-primary);
   background-color: inherit;
   z-index: 99;
 }
@@ -295,7 +343,7 @@ header i {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: var(--bg-search);
+  background-color: var(--bg-tertiary);
   border-radius: 4px;
 }
 
@@ -349,6 +397,7 @@ header i {
 }
 
 .dropdown-notification {
+  padding: 0;
   width: 350px;
   right: 0;
 }
@@ -363,15 +412,18 @@ header i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color-primary);
   font-size: 16px;
 }
 
 .dropdown-notification .notification-header a {
   color: var(--text-secondary);
   cursor: pointer;
-  font-weight: normal;
   font-size: 14px;
+}
+
+.dropdown-notification .notification-header a:hover {
+  color: var(--accent);
 }
 
 .dropdown-notification .notification-list {
@@ -404,12 +456,29 @@ header i {
 
 .dropdown-notification .notification-footer {
   text-align: center;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color-primary);
 }
 
 .dropdown-notification .notification-footer a {
-  font-size: 15px;
-  text-decoration: underline;
+  color: var(--text-secondary);
+}
+
+.dropdown-notification .notification-footer a:hover {
+  color: var(--accent);
+}
+
+.dropdown-profile {
+  right: 0;
+  width: 160px;
+}
+
+.dropdown-profile .profile-item > a {
+  padding: 10px 15px;
+}
+
+.dropdown-profile .profile-item i {
+  margin-right: 10px;
+  font-size: 20px;
   color: var(--text-secondary);
 }
 
@@ -419,13 +488,85 @@ header i {
   left: 0;
   top: 0;
   margin-top: 65px;
-  border-right: 1px solid var(--border-color);
   height: 100vh;
   background-color: inherit;
 }
 
 .sidebar-nav {
   width: 250px;
+  padding: 20px 0;
+}
+
+.sidebar-nav .nav-item.active .nav-link {
+  color: var(--accent);
+}
+
+.sidebar-nav .nav-item.active .nav-link::before {
+  content: '';
+  height: 100%;
+  width: 2px;
+  background: var(--accent);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-nav .nav-link {
+  padding: 10px 15px;
+  position: relative;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 18px;
+}
+
+.sidebar-nav .nav-link-icon {
+  margin-right: 15px;
+}
+
+.sidebar-nav .nav-link-badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.sidebar-nav .nav-link-badge.danger {
+  background-color: var(--danger);
+}
+
+.sidebar-nav .nav-link-badge.success {
+  background-color: var(--success);
+}
+
+.sidebar-nav .nav-link-badge.warning {
+  background-color: var(--warning);
+}
+
+.sidebar-nav .nav-link-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -9px;
+}
+
+.sidebar-nav .nav-group .nav-group-title {
+  font-size: 11px;
+  padding: 0 15px;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.sidebar-nav .nav-group:first-child .nav-group-title {
+  margin-top: 0;
+}
+
+.sidebar-nav .nav-collapsable-items > .nav-item .nav-link {
+  padding-left: 48px;
 }
 
 /* Layout */
@@ -446,9 +587,9 @@ This file is used to contain all themes imports.
   --text-primary: #333333;
   --text-secondary: #7e7e7e;
   --bg-primary: #ffffff;
-  --bg-secondary: #f6f7fb;
-  --bg-search: #f0f2f5;
-  --border-color: #e6ecf5;
+  --bg-secondary: #F4F4F4;
+  --bg-tertiary: #F9F9F9;
+  --border-color-primary: #eceef1;
 }
 
 .theme-dark {
@@ -457,7 +598,7 @@ This file is used to contain all themes imports.
   --bg-primary: #242526;
   --bg-secondary: #18191a;
   --bg-search: #3a3b3c;
-  --border-color: #363738;
+  --border-color-primary: #363738;
 }
 
 /*

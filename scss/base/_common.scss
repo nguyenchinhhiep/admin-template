@@ -10,6 +10,8 @@ body {
   overflow-x: hidden;
 }
 
+// Font Weight
+
 .font-weight-medium {
   font-weight: var(--font-weight-medium);
 }
@@ -26,7 +28,31 @@ body {
   font-weight: var(--font-weight-extra-bold);
 }
 
+
+// Text
+
+.text-primary {
+  color: var(--text-primary);
+}
 .text-secondary {
   color: var(--text-secondary);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+
+
+// Divider
+.divider {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color-primary);
+  height: 1px;
+  overflow: hidden;
 }
 

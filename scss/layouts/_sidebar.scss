@@ -4,11 +4,104 @@
     left: 0;
     top: 0;
     margin-top: 65px;
-    border-right: 1px solid var(--border-color);
     height: 100vh;
     background-color: inherit;
 }
 
 .sidebar-nav {
     width: 250px;
+    padding: 20px 0;
+
+    .nav-item.active {
+        .nav-link{
+            color: var(--accent);
+            @extend .font-weight-medium;
+            @extend %bg-hover;
+            &::before {
+                content: '';
+                height: 100%;
+                width: 2px;
+                background: var(--accent);
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    .nav-link {
+        @include display-flex;
+        @include align-items(center);
+        padding: 10px 15px;
+        position: relative;
+
+        i {
+            font-size: 18px;
+        }
+        
+        &:hover, &:active, &:focus {
+            @extend %bg-hover;
+        }
+
+        &-icon {
+            margin-right: 15px;
+        }
+
+        &-badge {
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-left: 8px;
+            display: inline-block;
+
+            &.danger {
+                background-color: var(--danger);
+            }
+
+            &.success {
+                background-color: var(--success);
+            }
+
+            &.warning {
+                background-color: var(--warning);
+            }
+        }
+
+        &-arrow {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            margin-top: -9px;
+        }
+    };
+    .nav-group {
+        .nav-group-title {
+            font-size: 11px;
+            padding: 0 15px;
+            margin-bottom: 8px;
+            margin-top: 15px;
+            @extend .text-uppercase;
+            @extend .font-weight-semibold;
+            @extend .text-secondary;
+        }
+
+        &:first-child{
+            .nav-group-title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .nav-collapsable-items {
+        > .nav-item {
+            .nav-link {
+                padding-left: 48px;
+            }
+        }
+    }
+
+
+    
 }

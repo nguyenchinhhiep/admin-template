@@ -179,15 +179,33 @@
                         <img src="./assets//images/profile.jpg" alt="">
                     </a>
                     <div class="dropdown-menu dropdown-profile">
-                        <div class="dropdown-header">
-                            <span>Notification</span>
-                        </div>
-                        <div class="dropdown-body">
-
-                        </div>
-                        <div class="dropdown-footer">
-
-                        </div>
+                        <ul>
+                            <li class="profile-item">
+                                <a href="#">
+                                    <i class='bx bx-cog'></i>
+                                    <span>Setting</span>
+                                </a>
+                            </li>
+                            <li class="profile-item">
+                                <a href="#">
+                                    <i class='bx bx-user-circle'></i>
+                                    <span>Profile</span>
+                                </a>
+                            </li>
+                            <li class="profile-item">
+                                <a href="#">
+                                    <i class='bx bx-envelope'></i>
+                                    <span>Inbox</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="profile-item">
+                                <a href="#">
+                                    <i class='bx bx-log-out-circle'></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -197,10 +215,10 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <ul class="sidebar-nav">
-            <li class="nav-item nav-group">
+            <li class="nav-group">
                 <div class="nav-group-title">Main</div>
                 <ul class="nav-group-items">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="#" class="nav-link">
                             <span class="nav-link-icon"><i class='bx bx-home-circle'></i></span>
                             <span class="nav-link-title">Dashboard</span>
@@ -208,8 +226,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="nav-link-icon"><i class='bx bx-home-envelop-open'></i></span>
+                            <span class="nav-link-icon"><i class='bx bx-envelope-open'></i></span>
                             <span class="nav-link-title">Messages</span>
+                            <span class="badge">5</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -226,38 +245,39 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item nav-group">
+            <li class="nav-group">
                 <div class="nav-group-title">Listings</div>
                 <ul class="nav-group-items">
                     <li class="nav-item nav-collapsable">
                         <a href="#" class="nav-link">
                             <span class="nav-link-icon"><i class='bx bx-layer'></i></span>
                             <span class="nav-link-title">My Listings</span>
+                            <span class="nav-link-arrow"><i class='bx bxs-chevron-down'></i></span>
                         </a>
                         <ul class="nav-collapsable-items">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <span class="nav-link-title">Active</span>
-                                    <span class="nav-link-badge">5</span>
+                                    <span class="nav-link-badge badge danger">5</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <span class="nav-link-title">Expired</span>
-                                    <span class="nav-link-badge">2</span>
+                                    <span class="nav-link-badge badge success">2</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <span class="nav-link-title">Pending</span>
-                                    <span class="nav-link-badge">1</span>
+                                    <span class="nav-link-badge badge warning">1</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="nav-link-icon"><i class='bx bx-home-star'></i></span>
+                            <span class="nav-link-icon"><i class='bx bx-star'></i></span>
                             <span class="nav-link-title">Reviews</span>
                         </a>
                     </li>
@@ -281,7 +301,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item nav-group">
+            <li class="nav-group">
                 <div class="nav-group-title">Account</div>
                 <ul class="nav-group-items">
                     <li class="nav-item">

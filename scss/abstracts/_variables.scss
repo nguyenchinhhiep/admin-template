@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --font-family: 'Inter', sans-serif;
-  --accent: #7774e7;
+  --accent: #3367D6;
   --success: #37c936;
   --danger: #f3103c;
   --warning: #ffc107;
@@ -12,4 +12,8 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
+}
+
+%bg-hover {
+  background-color: var(--bg-tertiary);
 }
