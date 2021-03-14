@@ -1,5 +1,5 @@
 .badge {
-    background: var(--accent);
+    background: $primary;
     color: #fff;
     font-size: 11px;
     padding: 2px 5px;
@@ -9,14 +9,14 @@
     @extend .font-weight-semibold;
 
     &.danger {
-        background-color: var(--danger);
+        background-color: $danger;
     }
 
     &.success {
-        background-color: var(--success);
+        background-color: $success;
     }
 
     &.warning {
-        background-color: var(--warning);
+        background-color: $warning;
     }
 }

@@ -13,19 +13,22 @@
     padding: 20px 0;
 
     .nav-item.active {
-        .nav-link{
-            color: var(--accent);
-            @extend .font-weight-medium;
-            @extend %bg-hover;
+        > .nav-link{
+            color: $primary;
+            @include theme-aware('background', 'bg-secondary');
             &::before {
                 content: '';
                 height: 100%;
-                width: 2px;
-                background: var(--accent);
+                width: 3px;
+                background: $primary;
                 display: block;
                 position: absolute;
                 left: 0;
                 top: 0;
+            }
+
+            &-arrow {
+                color: $primary;
             }
         }
     }
@@ -34,48 +37,51 @@
         @include align-items(center);
         padding: 10px 15px;
         position: relative;
+        font-weight: $font-weight-medium;
 
         i {
             font-size: 18px;
         }
         
-        &:hover, &:active, &:focus {
-            @extend %bg-hover;
+        &:hover, &:active {
+            @include theme-aware('background', 'bg-secondary');
+            color: $primary;
+
+            .nav-link-icon {
+                transform: rotateY(180deg);
+            }
+
+            .nav-link-arrow {
+                color: $primary;
+            }
         }
 
         &-icon {
             margin-right: 15px;
-        }
-
-        &-badge {
-            background: var(--accent);
-            color: #fff;
-            font-size: 11px;
-            padding: 2px 5px;
-            border-radius: 4px;
-            margin-left: 8px;
-            display: inline-block;
-
-            &.danger {
-                background-color: var(--danger);
-            }
-
-            &.success {
-                background-color: var(--success);
-            }
-
-            &.warning {
-                background-color: var(--warning);
-            }
+            transition: transform ease $transition;
         }
 
         &-arrow {
             position: absolute;
             top: 50%;
-            right: 20px;
+            right: 30px;
             margin-top: -9px;
+            @include theme-aware('color', 'text-secondary');
+
+            i {
+                font-size: 14px;
+            }
         }
     };
+
+    .nav-collapsable.open {
+        > .nav-link,  .nav-link-arrow{
+            color: $primary;
+        }
+        .nav-link-arrow {
+            transform: rotate(90deg);
+        }
+    }
     .nav-group {
         .nav-group-title {
             font-size: 11px;
@@ -99,6 +105,10 @@
             .nav-link {
                 padding-left: 48px;
             }
+        }
+
+        &.open {
+            display: block;
         }
     }
 

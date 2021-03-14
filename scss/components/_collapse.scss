@@ -1,0 +1,9 @@
+.collapse:not(.show){
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height ease 1000ms;
+}

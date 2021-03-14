@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/scss/styles.css">
 </head>
 
-<body class="theme-light">
+<body>
     <!-- Header -->
     <header>
         <nav class="navbar">
@@ -34,7 +34,7 @@
                         <i class='bx bx-bell'></i>
                         <span class="navbar-notification-badge">5</span>
                     </a>
-                    <div class="dropdown-menu dropdown-notification show">
+                    <div class="dropdown-menu dropdown-notification">
                         <div class="dropdown-header notification-header">
                             <span>Notifications</span>
                             <a href="#">Mark all as read</a>
@@ -219,26 +219,26 @@
                 <div class="nav-group-title">Main</div>
                 <ul class="nav-group-items">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-home-circle'></i></span>
                             <span class="nav-link-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-envelope-open'></i></span>
                             <span class="nav-link-title">Messages</span>
                             <span class="badge">5</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-copy'></i></span>
                             <span class="nav-link-title">Bookings</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-wallet'></i></span>
                             <span class="nav-link-title">Wallet</span>
                         </a>
@@ -249,22 +249,22 @@
                 <div class="nav-group-title">Listings</div>
                 <ul class="nav-group-items">
                     <li class="nav-item nav-collapsable">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link collapse-toggle" role="button" data-target="listingCollapse">
                             <span class="nav-link-icon"><i class='bx bx-layer'></i></span>
                             <span class="nav-link-title">My Listings</span>
-                            <span class="nav-link-arrow"><i class='bx bxs-chevron-down'></i></span>
+                            <span class="nav-link-arrow"><i class='bx bxs-chevron-right'></i></span>
                         </a>
-                        <ul class="nav-collapsable-items">
+                        <ul class="nav-collapsable-items collapse" id="listingCollapse">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <span class="nav-link-title">Active</span>
-                                    <span class="nav-link-badge badge danger">5</span>
+                                    <span class="nav-link-badge badge success">5</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <span class="nav-link-title">Expired</span>
-                                    <span class="nav-link-badge badge success">2</span>
+                                    <span class="nav-link-badge badge danger">2</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -276,25 +276,25 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-star'></i></span>
                             <span class="nav-link-title">Reviews</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-heart'></i></span>
                             <span class="nav-link-title">Bookmarks</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-plus-circle'></i></span>
                             <span class="nav-link-title">Add Listings</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-certification'></i></span>
                             <span class="nav-link-title">Invoice</span>
                         </a>
@@ -305,13 +305,13 @@
                 <div class="nav-group-title">Account</div>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-user-circle'></i></span>
                             <span class="nav-link-title">Profile</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" role="button">
                             <span class="nav-link-icon"><i class='bx bx-log-out'></i></span>
                             <span class="nav-link-title">Logout</span>
                         </a>
@@ -326,7 +326,7 @@
 
     </main>
     <!-- Main Container End -->
-    <script src="app.js"></script>
+    <script src="js/collapse.js"></script>
 </body>
 
 </html>

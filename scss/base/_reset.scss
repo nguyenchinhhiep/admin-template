@@ -16,6 +16,7 @@ img {
 // List style
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 // Link
@@ -37,5 +38,5 @@ button {
 }
 
 input::placeholder {
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
