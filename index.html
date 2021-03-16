@@ -30,14 +30,14 @@
             </form>
             <ul class="navbar-right">
                 <li class="navbar-notification has-dropdown">
-                    <a href="#">
+                    <a class="dropdown-toggle" href="#" aria-expanded="false" data-target="notificationDropdown">
                         <i class='bx bx-bell'></i>
                         <span class="navbar-notification-badge">5</span>
                     </a>
-                    <div class="dropdown-menu dropdown-notification">
+                    <div class="dropdown-menu dropdown-notification" id="notificationDropdown">
                         <div class="dropdown-header notification-header">
                             <span>Notifications</span>
-                            <a href="#">Mark all as read</a>
+                            <a onclick="event.stopPropagation()">Mark all as read</a>
                         </div>
                         <div class="dropdown-body">
                             <ul class="notification-list">
@@ -170,15 +170,15 @@
                             </ul>
                         </div>
                         <div class="dropdown-footer notification-footer">
-                            <a href="#">Check all notifications</a>
+                            <a onclick="event.stopPropagation()">Check all notifications</a>
                         </div>
                     </div>
                 </li>
                 <li class="navbar-profile has-dropdown">
-                    <a href="#">
+                    <a class="dropdown-toggle profile-toggle" href="#" aria-expanded="false" data-target="profileDropdown">
                         <img src="./assets//images/profile.jpg" alt="">
                     </a>
-                    <div class="dropdown-menu dropdown-profile">
+                    <div class="dropdown-menu dropdown-profile" id="profileDropdown">
                         <ul>
                             <li class="profile-item">
                                 <a href="#">
@@ -247,9 +247,9 @@
             </li>
             <li class="nav-group">
                 <div class="nav-group-title">Listings</div>
-                <ul class="nav-group-items">
+                <ul class="nav-group-items">    
                     <li class="nav-item nav-collapsable">
-                        <a href="#" class="nav-link collapse-toggle" role="button" data-target="listingCollapse">
+                        <a href="#" class="nav-link collapse-toggle" role="button" data-target="listingCollapse" aria-expanded="false">
                             <span class="nav-link-icon"><i class='bx bx-layer'></i></span>
                             <span class="nav-link-title">My Listings</span>
                             <span class="nav-link-arrow"><i class='bx bxs-chevron-right'></i></span>
@@ -281,11 +281,29 @@
                             <span class="nav-link-title">Reviews</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" role="button">
+                    <li class="nav-item nav-collapsable">
+                        <a href="#" class="nav-link collapse-toggle" role="button" data-target="bookmarksCollapse" aria-expanded="false">
                             <span class="nav-link-icon"><i class='bx bx-heart'></i></span>
                             <span class="nav-link-title">Bookmarks</span>
+                            <span class="nav-link-arrow"><i class='bx bxs-chevron-right'></i></span>
                         </a>
+                        <ul class="nav-collapsable-items collapse" id="bookmarksCollapse">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <span class="nav-link-title">Bookmark 1</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <span class="nav-link-title">Bookmark 2</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <span class="nav-link-title">Bookmark 3</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link" role="button">
@@ -327,6 +345,7 @@
     </main>
     <!-- Main Container End -->
     <script src="js/collapse.js"></script>
+    <script src="js/dropdowns.js"></script>
 </body>
 
 </html>
