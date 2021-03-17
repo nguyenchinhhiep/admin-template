@@ -1,0 +1,128 @@
+header
+  nav.navbar 
+    .navbar-left 
+      button.toggle-sidebar 
+        i.bx.bx-menu 
+      a.navbar-brand(href="index.html")
+        h1 Hiep.
+    form.navbar-search
+      label.navbar-search-button(for="search-nav")
+        i.bx.bx-search
+      input.navbar-search-input#search-nav(type="text" placeholder="Search...")
+    ul.navbar-right
+      li.navbar-notification.has-dropdown
+        a.dropdown-toggle(href='#' aria-expanded='false' data-target='notificationDropdown')
+          i.bx.bx-bell
+          span.navbar-notification-badge 5
+        #notificationDropdown.dropdown-menu.dropdown-notification
+          .dropdown-header.notification-header
+            span Notifications
+            a(onclick='event.stopPropagation()') Mark all as read
+          .dropdown-body
+            ul.notification-list
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-1.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-2.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-1.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-2.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-1.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-2.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-1.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-2.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+              li.notification-item
+                a(href='#')
+                  img.notification-thumb(src=require('./../../assets/images/thumb-1.jpg').default alt='')
+                  .notification-info
+                    .title
+                      span.font-weight-medium Jennifer Watkins
+                      span commented on your post
+                    .sub-title
+                      | 5 mins ago
+          .dropdown-footer.notification-footer
+            a(onclick='event.stopPropagation()') Check all notifications
+      li.navbar-profile.has-dropdown
+        a.dropdown-toggle.profile-toggle(href='#' aria-expanded='false' data-target='profileDropdown')
+          img(src=require('./../../assets//images/profile.jpg').default alt='')
+        #profileDropdown.dropdown-menu.dropdown-profile
+          ul
+            li.profile-item
+              a(href='#')
+                i.bx.bx-cog
+                span Setting
+            li.profile-item
+              a(href='#')
+                i.bx.bx-user-circle
+                span Profile
+            li.profile-item
+              a(href='#')
+                i.bx.bx-envelope
+                span Inbox
+            li.divider
+            li.profile-item
+              a(href='#')
+                i.bx.bx-log-out-circle
+                span Logout
+

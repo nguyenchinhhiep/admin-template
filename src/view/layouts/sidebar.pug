@@ -1,0 +1,94 @@
+aside.sidebar
+  ul.sidebar-nav
+    li.nav-group
+      .nav-group-title Main
+      ul.nav-group-items
+        li.nav-item.active
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-home-circle
+            span.nav-link-title Dashboard
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-envelope-open
+            span.nav-link-title Messages
+            span.badge 5
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-copy
+            span.nav-link-title Bookings
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-wallet
+            span.nav-link-title Wallet
+    li.nav-group
+      .nav-group-title Listings
+      ul.nav-group-items
+        li.nav-item.nav-collapsable
+          a.nav-link.collapse-toggle(href='#' role='button' data-target='listingCollapse' aria-expanded='false')
+            span.nav-link-icon
+              i.bx.bx-layer
+            span.nav-link-title My Listings
+            span.nav-link-arrow
+              i.bx.bxs-chevron-right
+          ul#listingCollapse.nav-collapsable-items.collapse
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Active
+                span.nav-link-badge.badge.success 5
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Expired
+                span.nav-link-badge.badge.danger 2
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Pending
+                span.nav-link-badge.badge.warning 1
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-star
+            span.nav-link-title Reviews
+        li.nav-item.nav-collapsable
+          a.nav-link.collapse-toggle(href='#' role='button' data-target='bookmarksCollapse' aria-expanded='false')
+            span.nav-link-icon
+              i.bx.bx-heart
+            span.nav-link-title Bookmarks
+            span.nav-link-arrow
+              i.bx.bxs-chevron-right
+          ul#bookmarksCollapse.nav-collapsable-items.collapse
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Bookmark 1
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Bookmark 2
+            li.nav-item
+              a.nav-link(href='#')
+                span.nav-link-title Bookmark 3
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-plus-circle
+            span.nav-link-title Add Listings
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-certification
+            span.nav-link-title Invoice
+    li.nav-group
+      .nav-group-title Account
+      ul.nav-group-items
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-user-circle
+            span.nav-link-title Profile
+        li.nav-item
+          a.nav-link(href='#' role='button')
+            span.nav-link-icon
+              i.bx.bx-log-out
+            span.nav-link-title Logout

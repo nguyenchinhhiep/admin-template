@@ -56,6 +56,4 @@ const handleDropdowns = (event) => {
     }
 }
 
-window.onclick = (event) => {
-    handleDropdowns(event);
-};
+export default handleDropdowns;

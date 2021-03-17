@@ -19,6 +19,7 @@ const toggleCollapse = (target) => {
         expand(target);
     }
 }
+
 const collapseToggles = document.querySelectorAll('.nav-link.collapse-toggle');
 const closeAllCollapse = () => {
     Array.from(collapseToggles).forEach(collapse => {
@@ -32,8 +33,11 @@ const closeAllCollapse = () => {
         collapse.setAttribute('aria-expanded', 'false');
     })
 }
-Array.from(collapseToggles).forEach(collapseToggle => {
-    collapseToggle.addEventListener('click', (e) => {
+
+const handleCollapse = (event) => {
+    const target = event.target;
+    const collapseToggle = target.closest('.nav-link.collapse-toggle');
+    if(!!collapseToggle){
         const parentNode = collapseToggle.parentNode;
         if (!parentNode.classList.contains('open')) {
             closeAllCollapse();
@@ -48,7 +52,8 @@ Array.from(collapseToggles).forEach(collapseToggle => {
         if (!!collapseTarget) {
             toggleCollapse(collapseTarget);
         }
-    })
-})
+    }
+}
 
+export default handleCollapse;
 
