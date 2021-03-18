@@ -15,7 +15,7 @@
     border: 1px solid;
     @include theme-aware('border-color', 'border-color-primary');
     border-radius: 4px;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
     z-index: 1000;
     display: none;
 }

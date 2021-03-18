@@ -65,7 +65,7 @@ header {
     height: 35px;
     display: flex;
     justify-content: space-between;
-    @include theme-aware('background', 'bg-tertiary');
+    // @include theme-aware('background', 'bg-tertiary');
     @include theme-aware('border-color', 'border-color-primary');
     border: 1px solid;
     border-radius: 4px;

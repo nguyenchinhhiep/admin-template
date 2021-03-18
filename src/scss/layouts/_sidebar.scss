@@ -9,9 +9,15 @@
     background-color: inherit;
     transition: width ease $transition;
     overflow: hidden;
+    border-right: 1px solid;
+    @include theme-aware('border-color', 'border-color-primary');
 
     .sidebar-minimize & {
         width: 58px;
+
+        &:hover {
+             width: 250px;
+        }
     }
 }
 
@@ -86,7 +92,6 @@
         }
 
         &-title {
-            flex-shrink: 0;
             white-space: nowrap;
             overflow-x: hidden;
             text-overflow: ellipsis;
@@ -94,7 +99,13 @@
             .sidebar-minimize & {
                 opacity: 0;
             }
+
+            .sidebar-minimize .sidebar:hover & {
+                opacity: 1;
+            }
         }
+
+         
     };
 
     .nav-collapsable.open {
@@ -123,9 +134,16 @@
                 height: 0;
                 margin: 0;
             }
+
+            .sidebar-minimize .sidebar:hover & {
+                opacity: 1;
+                height: 13px;
+                margin-bottom: 8px;
+                margin-top: 15px;
+            }
         }
 
-        &:first-child{
+        .sidebar-minimize .sidebar:hover &:first-child, &:first-child{
             .nav-group-title {
                 margin-top: 0;
             }
@@ -144,6 +162,10 @@
 
             .sidebar-minimize & {
                 display: none;
+            }
+
+            .sidebar-minimize .sidebar:hover & {
+                display: block;
             }
         }
     }
