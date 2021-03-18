@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "boxicons": "^2.0.7"
+    "boxicons": "^2.0.7",
+    "overlayscrollbars": "^1.13.1"
   }
 }

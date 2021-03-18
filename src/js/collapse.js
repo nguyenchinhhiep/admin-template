@@ -20,27 +20,26 @@ const toggleCollapse = (target) => {
     }
 }
 
-const collapseToggles = document.querySelectorAll('.nav-link.collapse-toggle');
-const closeAllCollapse = () => {
-    Array.from(collapseToggles).forEach(collapse => {
-        const parentNode = collapse.parentNode;
-        const collapseTargetId = collapse.dataset.target;
-        const collapseTarget = document.getElementById(collapseTargetId);
-        parentNode.classList.remove('open');
-        if (!!collapseTarget) {
-            collapseTarget.classList.remove('show');
-        }
-        collapse.setAttribute('aria-expanded', 'false');
-    })
-}
+// const collapseToggles = document.querySelectorAll('.collapse-toggle');
+// export const closeAllCollapse = () => {
+//     Array.from(collapseToggles).forEach(collapse => {
+//         const parentNode = collapse.parentNode;
+//         const collapseTargetId = collapse.dataset.target;
+//         const collapseTarget = document.getElementById(collapseTargetId);
+//         parentNode.classList.remove('open');
+//         if (!!collapseTarget) {
+//             collapseTarget.classList.remove('show');
+//         }
+//         collapse.setAttribute('aria-expanded', 'false');
+//     })
+// }
 
 const handleCollapse = (event) => {
     const target = event.target;
-    const collapseToggle = target.closest('.nav-link.collapse-toggle');
+    const collapseToggle = target.closest('.collapse-toggle');
     if(!!collapseToggle){
         const parentNode = collapseToggle.parentNode;
         if (!parentNode.classList.contains('open')) {
-            closeAllCollapse();
             collapseToggle.setAttribute('aria-expanded', 'true');
             parentNode.classList.add('open');
         } else {

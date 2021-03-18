@@ -225,6 +225,7 @@ header {
             @include display-flex;
             @include align-items(center);
             padding: 10px 15px;
+            transition: background ease $transition;
 
             &:hover, &:active, &:focus {
                 @include theme-aware('background', 'bg-tertiary');
