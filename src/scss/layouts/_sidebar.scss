@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     margin-top: 65px;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     background-color: inherit;
     transition: width ease $transition;
@@ -151,6 +151,7 @@
     }
 
     .nav-collapsable-items {
+        display: none;
         > .nav-item {
             .nav-link {
                 padding-left: 53px;

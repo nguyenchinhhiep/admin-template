@@ -65,7 +65,6 @@ header {
     height: 35px;
     display: flex;
     justify-content: space-between;
-    // @include theme-aware('background', 'bg-tertiary');
     @include theme-aware('border-color', 'border-color-primary');
     border: 1px solid;
     border-radius: 4px;
@@ -154,7 +153,7 @@ header {
         font-size: 16px;
 
         a {
-            @include theme-aware('color', 'text-secondary');
+            @include theme-aware('color', 'text-tertiary');
             cursor: pointer;
             font-weight: normal;
             font-size: 14px;
@@ -207,7 +206,7 @@ header {
         @include theme-aware('border-color', 'border-color-primary');
 
         a {
-            @include theme-aware('color', 'text-secondary');
+            @include theme-aware('color', 'text-tertiary');
             cursor: pointer;
             &:hover {
                 color: $primary;

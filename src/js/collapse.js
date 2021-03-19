@@ -1,38 +1,24 @@
-const collapse = (target) => {
-    if (!target.classList.contains('show')) {
+const collapse = (target, activeClass='show') => {
+    if (!target.classList.contains(activeClass)) {
         return;
     }
-    target.classList.remove('show');
+    target.classList.remove(activeClass);
 }
 
-const expand = (target) => {
-    if (target.classList.contains('show')) {
+const expand = (target, activeClass='show') => {
+    if (target.classList.contains(activeClass)) {
         return;
     }
-    target.classList.add('show');
+    target.classList.add(activeClass);
 }
 
-const toggleCollapse = (target) => {
-    if (target.classList.contains('show')) {
-        collapse(target);
+export const toggleCollapse = (target, activeClass='show') => {
+    if (target.classList.contains(activeClass)) {
+        collapse(target, activeClass);
     } else {
-        expand(target);
+        expand(target, activeClass);
     }
 }
-
-// const collapseToggles = document.querySelectorAll('.collapse-toggle');
-// export const closeAllCollapse = () => {
-//     Array.from(collapseToggles).forEach(collapse => {
-//         const parentNode = collapse.parentNode;
-//         const collapseTargetId = collapse.dataset.target;
-//         const collapseTarget = document.getElementById(collapseTargetId);
-//         parentNode.classList.remove('open');
-//         if (!!collapseTarget) {
-//             collapseTarget.classList.remove('show');
-//         }
-//         collapse.setAttribute('aria-expanded', 'false');
-//     })
-// }
 
 const handleCollapse = (event) => {
     const target = event.target;

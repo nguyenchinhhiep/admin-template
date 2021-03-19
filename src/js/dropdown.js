@@ -1,25 +1,8 @@
-const hideDropdown = (target) => {
-    if (!target.classList.contains('show')) {
-        return;
-    }
-    target.classList.remove('show');
-}
+import { toggleCollapse } from './collapse';
 
-const showDropdown = (target) => {
-    if (target.classList.contains('show')) {
-        return;
-    }
-    target.classList.add('show');
-}
 
-const toggleDropdown = (target) => {
-    if (target.classList.contains('show')) {
-        hideDropdown(target);
-    } else {
-        showDropdown(target);
-    }
-}
 
+const toggleDropdown = toggleCollapse;
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 const closeDropdowns = () => {
     Array.from(dropdownToggles).forEach(dropdownToggle => {
@@ -43,13 +26,12 @@ const handleDropdowns = (event) => {
             if (dropdownToggle.classList.contains('show')) {
                 dropdownToggle.setAttribute('aria-expanded', 'false');
                 dropdownToggle.classList.remove('show');
-                toggleDropdown(dropdownTarget);
             } else {
                 closeDropdowns();
                 dropdownToggle.setAttribute('aria-expanded', 'true');
                 dropdownToggle.classList.add('show');
-                toggleDropdown(dropdownTarget);
             }
+            toggleDropdown(dropdownTarget);
         }
     } else {
         closeDropdowns();

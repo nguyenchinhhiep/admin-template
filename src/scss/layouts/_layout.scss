@@ -2,12 +2,15 @@
 main {
     @include theme-aware('background', 'bg-tertiary');
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     padding: 65px 0 0 250px;
+    @include display-flex;
+    @include flex-direction(column);
     transition: padding ease $transition;
 
     .content {
         padding: 15px;
+        @include flex-grow(1);
     }
     .sidebar-minimize & {
         padding: 65px 0 0 58px;

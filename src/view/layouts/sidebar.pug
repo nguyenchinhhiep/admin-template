@@ -28,13 +28,13 @@ aside.sidebar
       .nav-group-title Listings
       ul.nav-group-items
         li.nav-item.nav-collapsable
-          a.nav-link.collapse-toggle(href='#' role='button' data-target='listingCollapse' aria-expanded='false')
+          a.nav-link.nav-link-toggle(href='#' role='button' data-target='listingCollapse' aria-expanded='false')
             span.nav-link-icon
               i.bx.bx-layer
             span.nav-link-title My Listings
             span.nav-link-arrow
               i.bx.bxs-chevron-right
-          ul#listingCollapse.nav-collapsable-items.collapse
+          ul#listingCollapse.nav-collapsable-items
             li.nav-item
               a.nav-link(href='#')
                 span.nav-link-title Active
@@ -53,13 +53,13 @@ aside.sidebar
               i.bx.bx-star
             span.nav-link-title Reviews
         li.nav-item.nav-collapsable
-          a.nav-link.collapse-toggle(href='#' role='button' data-target='bookmarksCollapse' aria-expanded='false')
+          a.nav-link.nav-link-toggle(href='#' role='button' data-target='bookmarksCollapse' aria-expanded='false')
             span.nav-link-icon
               i.bx.bx-heart
             span.nav-link-title Bookmarks
             span.nav-link-arrow
               i.bx.bxs-chevron-right
-          ul#bookmarksCollapse.nav-collapsable-items.collapse
+          ul#bookmarksCollapse.nav-collapsable-items
             li.nav-item
               a.nav-link(href='#')
                 span.nav-link-title Bookmark 1
