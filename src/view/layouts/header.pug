@@ -5,10 +5,11 @@ header
         i.bx.bx-menu 
       a.navbar-brand(href="index.html")
         h1 Hiep.
-    form.navbar-search
-      label.navbar-search-button(for="search-nav")
-        i.bx.bx-search
-      input.navbar-search-input#search-nav(type="text" placeholder="Search...")
+    .navbar-search
+      form
+        label.navbar-search-button(for="search-nav")
+          i.bx.bx-search
+        input.navbar-search-input#search-nav(type="text" placeholder="Search...")
     ul.navbar-right
       li.navbar-notification.has-dropdown
         a.dropdown-toggle(href='#' aria-expanded='false' data-target='notificationDropdown')

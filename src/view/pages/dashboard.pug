@@ -1,2 +1,37 @@
 extends ../layouts/main.pug
 block content
+  include ./../mixins/breadscrumb.pug
+  +breadscrumb([['Home', '/index.html']], 'Dashboard')
+  .row 
+    .col-xl-3.col-sm-6 
+      .card.stats.bg-primary.rounded.bg-gradient
+        .card-body 
+          .stats-icon
+            i.bx.bx-map
+          .stats-title
+            .stats-sub-title Total Views
+            h2.stats-quantity  865
+    .col-xl-3.col-sm-6 
+      .card.stats.bg-success.rounded.bg-gradient
+        .card-body 
+          .stats-icon
+            i.bx.bx-line-chart
+          .stats-title
+            .stats-sub-title Total Reviews
+            h2.stats-quantity  865
+    .col-xl-3.col-sm-6 
+      .card.stats.bg-danger.rounded.bg-gradient
+        .card-body 
+          .stats-icon
+            i.bx.bx-star
+          .stats-title
+            .stats-sub-title Bookmarks
+            h2.stats-quantity  865
+    .col-xl-3.col-sm-6 
+      .card.stats.bg-warning.rounded.bg-gradient
+        .card-body 
+          .stats-icon
+            i.bx.bx-heart
+          .stats-title
+            .stats-sub-title Total Earnings
+            h2.stats-quantity  865

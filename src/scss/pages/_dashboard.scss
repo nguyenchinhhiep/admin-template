@@ -1,0 +1,47 @@
+.stats {
+  padding: 20px;
+  color: $white;
+
+  > .card-body {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+  }
+
+  &-sub-title {
+    margin-bottom: 10px;
+    font-weight: $font-weight-medium;
+  }
+
+  &-quantity {
+    text-align: center;
+  }
+
+  &-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: $white;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    font-size: 35px;
+
+    .stats.bg-primary & {
+      color: $primary;
+    }
+
+    .stats.bg-success & {
+      color: $success;
+    }
+
+    .stats.bg-danger & {
+      color: $danger;
+    }
+
+    .stats.bg-warning & {
+      color: $warning;
+    }
+  }
+}

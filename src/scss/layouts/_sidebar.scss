@@ -10,6 +10,7 @@
     transition: width ease $transition;
     overflow: hidden;
     border-right: 1px solid;
+    z-index: 99;
     @include theme-aware('border-color', 'border-color-primary');
 
     .sidebar-minimize & {

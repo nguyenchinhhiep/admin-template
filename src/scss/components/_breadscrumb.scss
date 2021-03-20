@@ -1,0 +1,28 @@
+.breadscrumb {
+  display: block;
+  margin-bottom: 15px;
+
+  &-item {
+    display: inline-block;
+    position: relative;
+
+    &:not(.current){
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &-item + &-item {
+    padding-left: 25px;
+    &::before {
+      content: '\ec8f';
+      font-family: boxicons;
+      display: inline-block;
+      font-size: 14px;
+      position: absolute;
+      left: 6px;
+      bottom: 1px;
+    }
+  }
+}

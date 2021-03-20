@@ -4,5 +4,4 @@ footer {
   border-top: 1px solid;
   @include theme-aware('border-color', 'border-color-primary');
   @include theme-aware('color', 'text-secondary');
-  font-size: 13px;
 }

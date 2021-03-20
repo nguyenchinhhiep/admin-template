@@ -35,6 +35,13 @@ xl: 1140px
   }
 }
 
+[class^="col"]{
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex-basis: 100% / 12 * $i;
@@ -42,14 +49,15 @@ xl: 1140px
   }
 }
 
-@for $i from 1 through 12 {
+
   @each $name, $value in $grid-breakpoints {
-    @media(min-width: $value){
-      .col-#{$name}-#{$i} {
-        flex-basis: 100% / 12 * $i;
-        max-width: 100% / 12 * $i;
+    @for $i from 1 through 12 {
+      @media(min-width: $value){
+        .col-#{$name}-#{$i} {
+          flex-basis: 100% / 12 * $i;
+          max-width: 100% / 12 * $i;
+        }
       }
-    }
   }
 }
 

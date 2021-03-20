@@ -57,3 +57,44 @@ body {
   overflow: hidden;
 }
 
+
+// Background
+.bg-primary {
+  background: $primary !important;
+}
+
+.bg-success {
+  background: $success !important;
+}
+
+.bg-danger {
+  background: $danger !important ;
+}
+
+.bg-warning {
+  background: $warning !important;
+}
+
+.bg-gradient {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.35) 0%, rgba(125, 185, 232, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', endColorstr='#007db9e8',GradientType=1 );
+}
+}
+
+// Border Radius
+
+.rounded {
+  border-radius: 12px !important;
+}
+

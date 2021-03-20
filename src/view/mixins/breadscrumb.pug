@@ -1,0 +1,9 @@
+mixin breadscrumb(items, last)
+  .breadscrumb 
+    ul.breadscumb-list
+      each item, index in items
+        li.breadscrumb-item
+          a.breadscrumb-link(href=item[1])=item[0]
+      if last
+        li.breadscrumb-item.current 
+          span.breadscrumb-link=last
