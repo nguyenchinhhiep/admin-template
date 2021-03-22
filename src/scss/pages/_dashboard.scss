@@ -1,35 +1,37 @@
+.welcome-heading {
+  margin-bottom: 25px;
+}
+
 .stats {
   padding: 20px;
   color: $white;
+  margin-bottom: 30px;
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
 
-  > .card-body {
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(space-between);
-    @include flex-wrap(wrap);
-  }
-
-  &-sub-title {
+  &-title {
     margin-bottom: 10px;
     font-weight: $font-weight-medium;
   }
 
-  &-quantity {
+  &-number {
     text-align: center;
   }
 
   &-icon {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: $white;
     @include display-flex;
     @include justify-content(center);
     @include align-items(center);
-    font-size: 35px;
+    font-size: 3.5rem;
 
     .stats.bg-primary & {
-      color: $primary;
+      @include theme-aware('color', 'primary-color');;
     }
 
     .stats.bg-success & {
@@ -42,6 +44,19 @@
 
     .stats.bg-warning & {
       color: $warning;
+    }
+  }
+}
+
+.lastest-transactions {
+  .card-header {
+    border-bottom: none;
+    padding-top: 20px;
+  }
+
+  table {
+    th {
+      min-width: 130px;
     }
   }
 }

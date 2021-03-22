@@ -33,9 +33,9 @@ $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 
 $text-primary-light: #202124 !default;
-$text-secondary-light: #333333 !default;
-$text-tertiary-light: #5f6368 !default;
-$bg-primary-light: #ffffff !default;
+$text-secondary-light: #455560 !default;
+$text-tertiary-light: #878787 !default;
+$bg-primary-light: $white !default;
 $bg-secondary-light: #f3f5f8 !default;
 $bg-tertiary-light: #fafafa !default;
 $border-primary-light: #ebe9f1 !default;
@@ -49,6 +49,7 @@ $bg-tertiary-dark: #3a3b3c !default;
 $border-primary-dark: #363738 !default;
 
 $transition: 0.4s;
+$border-radius: 12px;
 $font-family: 'Inter', sans-serif;
 
 $font-weight-medium: 500;
@@ -56,7 +57,7 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 
-$box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+$box-shadow: 0 1px 4px 2px rgba(0, 0, 0, .1);
 
 
 $themes: (
@@ -67,7 +68,8 @@ $themes: (
         'bg-primary': $bg-primary-light,
         'bg-secondary': $bg-secondary-light,
         'bg-tertiary': $bg-tertiary-light,
-        'border-color-primary': $border-primary-light
+        'border-color-primary': $border-primary-light,
+        'primary-color': $primary
     ),
     'dark': (
         'text-primary': $text-primary-dark,
@@ -76,6 +78,7 @@ $themes: (
         'bg-primary': $bg-primary-dark,
         'bg-secondary': $bg-secondary-dark,
         'bg-tertiary': $bg-tertiary-dark,
-        'border-color-primary': $border-primary-dark
+        'border-color-primary': $border-primary-dark,
+        'primary-color': $primary
     )
 )

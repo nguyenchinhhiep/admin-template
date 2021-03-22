@@ -23,7 +23,7 @@ header {
     z-index: 99;
 
     i {
-        font-size: 24px;
+        font-size: 2.4rem;
     }
 
     .dropdown-toggle.show:not(.profile-toggle){
@@ -59,19 +59,20 @@ header {
 
 
 .navbar-search {
-    max-width: 400px;
+    margin: 0 20px;
+    max-width: 550px;
     width: 100%;
-    height: 35px;
+    height: 37px;
     @include display-flex;
     @include align-self(center);
-    @include theme-aware('color', 'text-secondary');
     > form {
         width: 100%;
         @include display-flex;
         @include justify-content(space-between);
-        @include theme-aware('border-color', 'border-color-primary');
-        border: 1px solid;
-        border-radius: 4px;
+        @include theme-aware('background', 'bg-tertiary');
+        border: 1px solid transparent;
+        border-radius: 10rem;
+        @include theme-aware('color', 'text-tertiary');
     }
     
 
@@ -84,8 +85,8 @@ header {
         height: 35px;
 
         i {
-            font-size: 18px;
-            @include theme-aware('color', 'text-secondary');
+            font-size: 1.8rem;
+            @include theme-aware('color', 'text-tertiary');
         }
     }
     
@@ -94,7 +95,7 @@ header {
         height: 100%;
         display: inline-block;
         padding: 8px 15px 8px 0;
-        font-size: 14px;
+        font-size: 1.4rem;
         background-color: transparent;
         border: 0;
         outline: 0;
@@ -103,6 +104,7 @@ header {
 
 .navbar-right {
     @include display-flex;
+    @include flex-shrink(0);
 }
 
 .navbar-notification {
@@ -123,12 +125,12 @@ header {
         position: absolute;
         right: 0px;
         top: 0px;
-        font-size: 10px;
+        font-size: 1rem;
         font-weight: $font-weight-medium;;
         background-color: $danger;
         color: $white;
         padding: 3px 5.5px;
-        border-radius: 50px;
+        border-radius: 10rem;
     }
 
 }
@@ -155,23 +157,23 @@ header {
         border-bottom: 1px solid;
         @include theme-aware('border-color', 'border-color-primary');
         font-weight: $font-weight-semibold;
-        font-size: 16px;
+        font-size: 1.6rem;
 
         a {
             @include theme-aware('color', 'text-tertiary');
+            font-size: 1.4rem;
             cursor: pointer;
             font-weight: normal;
-            font-size: 14px;
 
             &:hover {
-                color: $primary;
+                @include theme-aware('color', 'primary-color');
             }
         }
     }
 
     .notification-list {
         max-height: calc(100vh - 160px);
-        overflow-y: auto;
+        overflow: hidden;
     }
 
     .notification-item {
@@ -200,8 +202,8 @@ header {
         }
 
         .sub-title {
-            @include theme-aware('color', 'text-secondary');
-            font-size: 13px;
+            @include theme-aware('color', 'text-tertiary');
+            font-size: 1.3rem;
         }
     }
 
@@ -212,9 +214,10 @@ header {
 
         a {
             @include theme-aware('color', 'text-tertiary');
+            font-size: 1.4rem;
             cursor: pointer;
             &:hover {
-                color: $primary;
+                @include theme-aware('color', 'primary-color');
             }
         }
     }
@@ -238,7 +241,7 @@ header {
 
         i {
             margin-right: 10px;
-            font-size: 20px;
+            font-size: 2rem;
             @include theme-aware('color', 'text-secondary');
         }
     }

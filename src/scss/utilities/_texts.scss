@@ -1,0 +1,37 @@
+// Text
+.text-primary {
+  @include theme-aware('color', 'text-primary');
+}
+
+.text-secondary {
+  @include theme-aware('color', 'text-secondary');
+}
+
+.text-tertiary {
+  @include theme-aware('color', 'text-tertiary');
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Font Weight
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-weight-extrabold {
+  font-weight: $font-weight-extrabold;
+}

@@ -1,6 +1,4 @@
-import OverlayScrollbars from 'overlayscrollbars';
 import {toggleCollapse} from './collapse';
-
 
 const navLinkToggles = document.querySelectorAll('.nav-link-toggle');
 const closeAllCollapse = () => {
@@ -37,14 +35,39 @@ export const handleSidebarNav = (event) => {
 
 }
 
+let mql = window.matchMedia('(max-width: 991px)');
+const body = document.getElementsByTagName('BODY')[0];
+const toggleSidebar = document.querySelector('.toggle-sidebar');
 const toggleSidebarHandler = () => {
-  const body = document.getElementsByTagName('BODY')[0];
-	const scrollbarInstances = OverlayScrollbars(document.querySelector('.sidebar-nav'), {});
-  const toggleSidebar = document.querySelector('.toggle-sidebar');
   toggleSidebar.addEventListener('click', (event) => {
-  event.preventDefault();
-  body.classList.toggle('sidebar-minimize');
+    event.preventDefault();
+    if (mql.matches) {
+      if (body.classList.contains('sidebar-minized')) {
+        body.classList.remove('sidebar-minimized');
+      };
+      body.classList.toggle('sidebar-open');
+    } else {
+      body.classList.toggle('sidebar-minimized');
+    }
   });
 }
+
+export const resizeScreenHandler = () => {
+  mql.addEventListener('change', (event) => {
+    if(event.matches){
+      body.classList.remove('sidebar-minimized');
+    } else {
+      body.classList.remove('sidebar-open');
+    }
+  })
+};
+
+export const handleSidebarOverlay = (event) => {
+  const target = event.target;
+  if(target.classList.contains('sidebar-overlay')){
+    body.classList.remove('sidebar-open');
+  }
+} 
+
 
 export default toggleSidebarHandler;

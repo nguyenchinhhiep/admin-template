@@ -13,8 +13,8 @@ xl: 1140px
 );
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
+  @include display-flex;
+  @include flex-wrap(wrap);
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -44,7 +44,7 @@ xl: 1140px
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    flex-basis: 100% / 12 * $i;
+    @include flex-basis(100% / 12 * $i);
     max-width: 100% / 12 * $i;
   }
 }
@@ -54,7 +54,7 @@ xl: 1140px
     @for $i from 1 through 12 {
       @media(min-width: $value){
         .col-#{$name}-#{$i} {
-          flex-basis: 100% / 12 * $i;
+          @include flex-basis(100% / 12 * $i);
           max-width: 100% / 12 * $i;
         }
       }

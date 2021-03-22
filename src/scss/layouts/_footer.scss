@@ -3,5 +3,10 @@ footer {
   padding: 15px;
   border-top: 1px solid;
   @include theme-aware('border-color', 'border-color-primary');
-  @include theme-aware('color', 'text-secondary');
+  @include theme-aware('color', 'text-tertiary');
+
+  span {
+    @include theme-aware('color', 'primary-color');
+    font-weight: $font-weight-medium;
+  }
 }

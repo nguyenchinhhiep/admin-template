@@ -5,96 +5,25 @@ html, body {
 body {
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: normal;
   @include theme-aware('color', 'text-primary');
   @include theme-aware('background-color', 'bg-primary');
   overflow-x: hidden;
 }
 
-// Font Weight
-
-.font-weight-medium {
-  font-weight: $font-weight-medium;
-}
-
-.font-weight-semibold {
-  font-weight: $font-weight-semibold;
-}
-
-.font-weight-bold {
-  font-weight: $font-weight-bold;
-}
-
-.font-weight-extrabold {
-  font-weight: $font-weight-extrabold;
-}
-
-
-// Text
-
-.text-primary {
-  @include theme-aware('color', 'text-primary');
-}
-.text-secondary {
-  @include theme-aware('color', 'text-secondary');
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.text-capitalize {
-  text-transform: capitalize;
-}
-
 // Divider
 .divider {
   width: 100%;
   border-bottom: 1px solid;
+  margin: 5px 0;
   @include theme-aware('border-color', 'border-color-primary');
   height: 1px;
   overflow: hidden;
 }
 
-
-// Background
-.bg-primary {
-  background: $primary !important;
-}
-
-.bg-success {
-  background: $success !important;
-}
-
-.bg-danger {
-  background: $danger !important ;
-}
-
-.bg-warning {
-  background: $warning !important;
-}
-
-.bg-gradient {
-  position: relative;
-  z-index: 1;
-
-  &::after {
-    position: absolute;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    content: "";
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.35) 0%, rgba(125, 185, 232, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', endColorstr='#007db9e8',GradientType=1 );
-}
-}
-
 // Border Radius
-
 .rounded {
-  border-radius: 12px !important;
+  border-radius: $border-radius !important;
 }
 

@@ -1,16 +1,30 @@
 .card {
-  box-shadow: $box-shadow;
+  // box-shadow: $box-shadow;
   margin-bottom: 15px;
-  border-radius: 4px;
+  border-radius: $border-radius;
   border: 1px solid;
   @include theme-aware('border-color', 'border-color-primary');
   @include display-flex;
   @include flex-direction(column);
   position: relative;
-  background-color: $white;
+  @include theme-aware('background', 'bg-primary');
+
+  &-header {
+    padding: 0 20px;
+    border-bottom: 1px solid;
+    @include display-flex;
+    @include justify-content(space-between);
+    @include theme-aware('border-color', 'border-color-primary');
+  }
+
+  &-title {
+    font-size: 1.6rem;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 20px;
+  }
 
   &-body {
-    padding: 15px;
+    padding: 20px;
     flex: 1 1 auto;
   }
 }

@@ -3,35 +3,84 @@ block content
   include ./../mixins/breadscrumb.pug
   +breadscrumb([['Home', '/index.html']], 'Dashboard')
   .row 
-    .col-xl-3.col-sm-6 
-      .card.stats.bg-primary.rounded.bg-gradient
+    .col-sm-6.col-xl-3
+      .stats.bg-primary.rounded.bg-gradient
+        .stats-icon
+          i.bx.bx-map
+        .stats-info
+          .stats-title Earnings
+          h2.stats-number  865
+    .col-sm-6.col-xl-3 
+      .stats.bg-success.rounded.bg-gradient
+        .stats-icon
+          i.bx.bx-line-chart
+        .stats-info
+          .stats-title Sales
+          h2.stats-number  865
+    .col-sm-6.col-xl-3 
+      .stats.bg-danger.rounded.bg-gradient
+        .stats-icon
+          i.bx.bx-star
+        .stats-info
+          .stats-title Visits
+          h2.stats-number  865
+    .col-sm-6.col-xl-3 
+      .stats.bg-warning.rounded.bg-gradient
+        .stats-icon
+          i.bx.bx-heart
+        .stats-info
+          .stats-title Likes
+          h2.stats-number  865
+
+  .row 
+    .col-lg-8
+      .card.lastest-transactions
+        .card-body
+          h3.card-title Latest Transactions
+          .table-container
+            table
+              thead 
+                tr
+                  th Customer
+                  th Date
+                  th Amount
+                  th Status
+              tbody 
+                tr 
+                  td Clayton Bates
+                  td 8 May 2020
+                  td $137.00
+                  td
+                    span.badge.success Approved
+                tr 
+                  td Clayton Bates
+                  td 8 May 2020
+                  td $137.00
+                  td
+                    span.badge.danger Rejected
+                tr 
+                  td Clayton Bates
+                  td 8 May 2020
+                  td $137.00
+                  td
+                    span.badge.warning Pending
+                tr 
+                  td Clayton Bates
+                  td 8 May 2020
+                  td $137.00
+                  td
+                    span.badge.success Approved
+                tr 
+                  td Clayton Bates
+                  td 8 May 2020
+                  td $137.00
+                  td
+                    span.badge.success Approved
+    .col-lg-4
+      .card.project-status 
         .card-body 
-          .stats-icon
-            i.bx.bx-map
-          .stats-title
-            .stats-sub-title Total Views
-            h2.stats-quantity  865
-    .col-xl-3.col-sm-6 
-      .card.stats.bg-success.rounded.bg-gradient
-        .card-body 
-          .stats-icon
-            i.bx.bx-line-chart
-          .stats-title
-            .stats-sub-title Total Reviews
-            h2.stats-quantity  865
-    .col-xl-3.col-sm-6 
-      .card.stats.bg-danger.rounded.bg-gradient
-        .card-body 
-          .stats-icon
-            i.bx.bx-star
-          .stats-title
-            .stats-sub-title Bookmarks
-            h2.stats-quantity  865
-    .col-xl-3.col-sm-6 
-      .card.stats.bg-warning.rounded.bg-gradient
-        .card-body 
-          .stats-icon
-            i.bx.bx-heart
-          .stats-title
-            .stats-sub-title Total Earnings
-            h2.stats-quantity  865
+          h3.card-title Project Status
+          ul 
+            li.project-status-item 
+              
+

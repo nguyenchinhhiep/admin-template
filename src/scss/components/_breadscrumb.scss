@@ -1,28 +1,28 @@
 .breadscrumb {
   display: block;
-  margin-bottom: 15px;
-
+  margin-bottom: 25px;
+  @include theme-aware('color', 'text-secondary');
   &-item {
     display: inline-block;
     position: relative;
 
     &:not(.current){
       &:hover {
-        color: $primary;
+        @include theme-aware('color', 'primary-color');
       }
     }
   }
 
   &-item + &-item {
-    padding-left: 25px;
+    padding-left: 23px;
     &::before {
       content: '\ec8f';
       font-family: boxicons;
       display: inline-block;
-      font-size: 14px;
+      font-size: 1.2rem;
       position: absolute;
       left: 6px;
-      bottom: 1px;
+      bottom: 2px;
     }
   }
 }

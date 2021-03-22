@@ -7,18 +7,49 @@
     height: 100%;
     width: 250px;
     background-color: inherit;
-    transition: width ease $transition;
+    transition: width ease $transition, transform ease $transition;
     overflow: hidden;
     border-right: 1px solid;
     z-index: 99;
+    @include theme-aware('color', 'text-secondary');
     @include theme-aware('border-color', 'border-color-primary');
 
-    .sidebar-minimize & {
+    &-overlay {
+        position: fixed;
+        left: 0;
+        top: 65px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        display: none;
+        z-index: -1;
+
+        .sidebar-open & {
+            display: block;
+            z-index: 98;
+        }
+    }
+
+    .sidebar-minimized & {
         width: 58px;
 
         &:hover {
              width: 250px;
         }
+    }
+
+    @media(max-width: 991px){
+        & {
+            transform: translateX(-250px);
+        }
+    }
+
+    .sidebar-open & {
+        transform: translateX(0);
+    }
+
+    .sidebar-hidden & {
+        transform: translateX(-250px);
     }
 }
 
@@ -31,21 +62,24 @@
 
     .nav-item.active {
         > .nav-link{
-            color: $primary;
+            @include theme-aware('color', 'primary-color');
             @include theme-aware('background', 'bg-secondary');
             &::before {
                 content: '';
                 height: 100%;
                 width: 3px;
-                background: $primary;
+                @include theme-aware('background', 'primary-color');
                 display: block;
                 position: absolute;
                 left: 0;
                 top: 0;
+                border: 1px solid transparent;
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
             }
 
             &-arrow {
-                color: $primary;
+                @include theme-aware('color', 'primary-color');
             }
         }
     }
@@ -58,19 +92,19 @@
         transition: background ease $transition;
 
         i {
-            font-size: 18px;
+            font-size: 1.8rem;
         }
         
         &:hover, &:active {
             @include theme-aware('background', 'bg-secondary');
-            color: $primary;
+            @include theme-aware('color', 'primary-color');;
 
             .nav-link-icon {
                 transform: rotateY(180deg);
             }
 
             .nav-link-arrow {
-                color: $primary;
+                @include theme-aware('color', 'primary-color');;
             }
         }
 
@@ -88,7 +122,7 @@
             @include theme-aware('color', 'text-secondary');
 
             i {
-                font-size: 14px;
+                font-size: 1.4rem;
             }
         }
 
@@ -97,11 +131,11 @@
             overflow-x: hidden;
             text-overflow: ellipsis;
             transition: opacity ease $transition;
-            .sidebar-minimize & {
+            .sidebar-minimized & {
                 opacity: 0;
             }
 
-            .sidebar-minimize .sidebar:hover & {
+            .sidebar-minimized .sidebar:hover & {
                 opacity: 1;
             }
         }
@@ -111,7 +145,7 @@
 
     .nav-collapsable.open {
         > .nav-link,  .nav-link-arrow{
-            color: $primary;
+            @include theme-aware('color', 'primary-color');;
         }
         .nav-link-arrow {
             transform: rotate(90deg);
@@ -119,24 +153,24 @@
     }
     .nav-group {
         .nav-group-title {
-            font-size: 11px;
+            font-size: 1.1rem;
             padding: 0 20px;
             margin-bottom: 8px;
             margin-top: 15px;
-            @extend .text-uppercase;
-            @extend .font-weight-semibold;
-            @extend .text-secondary;
+            text-transform: uppercase;
+            font-weight: $font-weight-semibold;
+            @include theme-aware('color', 'text-secondary');
             height: 13px;
             overflow: hidden;
             transition: height ease $transition, opacity ease $transition, margin ease $transition;
 
-            .sidebar-minimize & {
+            .sidebar-minimized & {
                 opacity: 0;
                 height: 0;
                 margin: 0;
             }
 
-            .sidebar-minimize .sidebar:hover & {
+            .sidebar-minimized .sidebar:hover & {
                 opacity: 1;
                 height: 13px;
                 margin-bottom: 8px;
@@ -144,7 +178,7 @@
             }
         }
 
-        .sidebar-minimize .sidebar:hover &:first-child, &:first-child{
+        .sidebar-minimized .sidebar:hover &:first-child, &:first-child{
             .nav-group-title {
                 margin-top: 0;
             }
@@ -162,11 +196,11 @@
         &.show {
             display: block;
 
-            .sidebar-minimize & {
+            .sidebar-minimized & {
                 display: none;
             }
 
-            .sidebar-minimize .sidebar:hover & {
+            .sidebar-minimized .sidebar:hover & {
                 display: block;
             }
         }
