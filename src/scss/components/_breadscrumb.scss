@@ -1,14 +1,7 @@
 .breadscrumb {
-  display: inline-block;
+  display: block;
   margin-bottom: 25px;
-  padding: 12px 16px;
   @include theme-aware('color', 'text-secondary');
-
-  @media (max-width: 991px){
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
-  }
   &-item {
     display: inline-block;
     position: relative;

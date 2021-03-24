@@ -11,7 +11,21 @@ header
           i.bx.bx-search
         input.navbar-search-input#search-nav(type="text" placeholder="Search...")
     ul.navbar-right
-      li.navbar-notification.has-dropdown
+      li.navbar-item.header-search-icon 
+        a
+         i.bx.bx-search
+      li.navbar-item.navbar-fullscreen 
+        a
+         i.bx.bx-fullscreen
+      li.navbar-item.navbar-languages.has-dropdown
+        a.dropdown-toggle(data-target="languages") EN
+        #languages.dropdown-menu.dropdown-languages.slideInUp
+          ul 
+            li.dropdown-item 
+              a English
+            li.dropdown-item  
+              a Vietnamese  
+      li.navbar-item.navbar-notification.has-dropdown
         a.dropdown-toggle( aria-expanded='false' data-target='notificationDropdown')
           i.bx.bx-bell
           span.navbar-notification-badge 5

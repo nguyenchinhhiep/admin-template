@@ -23,7 +23,8 @@ header {
     z-index: 99;
 
     i {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
+        @include theme-aware('color','text-secondary');
     }
 
     .dropdown-toggle.show:not(.profile-toggle){
@@ -67,6 +68,11 @@ header {
     height: 37px;
     @include display-flex;
     @include align-self(center);
+
+    @media (max-width: 850px){
+        display: none;
+    }
+
     > form {
         width: 100%;
         @include display-flex;
@@ -111,19 +117,39 @@ header {
     margin-left: auto;
 }
 
-.navbar-notification {
+.navbar-item {
     margin-right: 15px;
-
-    > a{
+    > a {
         @include display-flex;
         @include justify-content(center);
         @include align-items(center);
         @extend %header-item;
+        @include theme-aware('color','text-secondary');
+        cursor: pointer;
 
         &:active {
             @include theme-aware('background', 'bg-secondary');
         }
     }
+}
+
+.header-search-icon {
+    display: none;
+
+    @media (max-width: 850px){
+        display: block;
+    }
+}
+
+.navbar-fullscreen {
+
+    @media (max-width: 768px){
+        display: none;
+    }
+}
+
+
+.navbar-notification {
 
     &-badge {
         position: absolute;
@@ -249,6 +275,16 @@ header {
             font-size: 2rem;
             @include theme-aware('color', 'text-secondary');
         }
+    }
+}
+.navbar-languages {
+    > a {
+        font-size: 1.6rem;
+    }
+}
+.dropdown-languages {
+    .dropdown-item {
+        cursor: pointer;
     }
 }
 

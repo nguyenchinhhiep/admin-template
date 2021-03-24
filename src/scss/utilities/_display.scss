@@ -1,3 +1,17 @@
-.d-inline-block {
-  display: inline-block !important;
+$display: inline,inline-block, block, flex, inline-flex;
+
+@each $item in $display {
+  .d-#{$item} {
+    display: $item !important;
+  }
+}
+
+@each $name, $value in $grid-breakpoints {
+  @each $item in $display {
+    @media (min-width: $value){
+      .d-#{$name}-#{$item}{
+        display: $item !important;
+      }
+    }
+  }
 }

@@ -74,7 +74,7 @@
   }
   .status-label {
     margin-bottom: 15px;
-    font-size: 13px;
+    font-size: 1.3rem;
     @include display-flex;
     @include justify-content(space-between);
     @include align-items(center);

@@ -1,0 +1,57 @@
+$spacer:                     1rem;
+$spacer-x:                   $spacer;
+$spacer-y:                   $spacer;
+$spacers: (
+  0: (
+    x:   0,
+    y:   0
+  ),
+  h: (
+    x:   ($spacer-x * 0.5),
+    y:   ($spacer-y * 0.5)
+  ),
+  1: (
+    x:   $spacer-x,
+    y:   $spacer-y
+  ),
+  2: (
+    x:   ($spacer-x * 1.5),
+    y:   ($spacer-y * 1.5)
+  ),
+  3: (
+    x:   ($spacer-x * 3),
+    y:   ($spacer-y * 3)
+  ),
+  4: (
+    x:   ($spacer-x * 4),
+    y:   ($spacer-y * 4)
+  )
+);
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+    $length-x:   map-get($lengths, x);
+    $length-y:   map-get($lengths, y);
+
+    .#{$abbrev}-#{$size} { #{$prop}: $length-y $length-x !important; } // a = All sides
+    .#{$abbrev}t-#{$size} { #{$prop}-top:    $length-y !important; }
+    .#{$abbrev}r-#{$size} { #{$prop}-right:  $length-x !important; }
+    .#{$abbrev}b-#{$size} { #{$prop}-bottom: $length-y !important; }
+    .#{$abbrev}l-#{$size} { #{$prop}-left:   $length-x !important; }
+  }
+}
+@each $name, $value in $grid-breakpoints {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $lengths in $spacers {
+      $length-x:   map-get($lengths, x);
+      $length-y:   map-get($lengths, y);
+      @media (min-width: $value){
+        .#{$abbrev}-#{$name}-#{$size} { #{$prop}: $length-y $length-x !important; } // a = All sides
+        .#{$abbrev}t-#{$name}-#{$size} { #{$prop}-top:    $length-y !important; }
+        .#{$abbrev}r-#{$name}-#{$size} { #{$prop}-right:  $length-x !important; }
+        .#{$abbrev}b-#{$name}-#{$size} { #{$prop}-bottom: $length-y !important; }
+        .#{$abbrev}l-#{$name}-#{$size} { #{$prop}-left:   $length-x !important; }
+      }
+    }
+  }
+}
