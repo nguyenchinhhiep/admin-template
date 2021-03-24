@@ -2,6 +2,7 @@ import handleDropdowns from './dropdown';
 import handleCollapse from './collapse';
 import toggleSidebarHandler, {handleSidebarNav, handleSidebarOverlay, resizeScreenHandler} from './sidebar';
 import OverlayScrollbars from 'overlayscrollbars';
+import { websiteVisitsChart } from './charts';
 
 
 window.onload = () => {
@@ -16,4 +17,5 @@ window.onload = () => {
     }
     toggleSidebarHandler();
     resizeScreenHandler();
+    const websiteVisitsChart = websiteVisitsChart;
 }

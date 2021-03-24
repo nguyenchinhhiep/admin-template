@@ -1,5 +1,5 @@
 .badge {
-    @include theme-aware('background', 'primary-color');
+    @include theme-aware('background', 'color-primary');
     color: #fff;
     font-size: 1.1rem;
     padding: 2px 5px;

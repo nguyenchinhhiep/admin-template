@@ -1,0 +1,33 @@
+.progress {
+  @include display-flex;
+  height: 4px;
+  overflow: hidden;
+  @include theme-aware('background', 'bg-tertiary');
+  border-radius: 0.25rem;
+
+  &-bar {
+    @include theme-aware('background', 'color-primary');
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    white-space: nowrap;
+    text-align: center;
+    transition: width ease $transition;
+
+    &.success {
+      background: $success;
+    }
+
+    &.danger {
+      background: $danger;
+    }
+
+    &.warning {
+      background: $warning;
+    }
+
+    &.purple {
+      background: $purple;
+    }
+  }
+}

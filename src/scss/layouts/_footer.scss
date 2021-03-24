@@ -1,12 +1,12 @@
 footer {
   @include flex-shrink(0);
-  padding: 15px;
+  padding: 20px 30px;
   border-top: 1px solid;
-  @include theme-aware('border-color', 'border-color-primary');
+  @include theme-aware('border-color', 'border-color-secondary');
   @include theme-aware('color', 'text-tertiary');
 
   span {
-    @include theme-aware('color', 'primary-color');
+    @include theme-aware('color', 'color-primary');
     font-weight: $font-weight-medium;
   }
 }

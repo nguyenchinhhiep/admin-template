@@ -1,37 +1,34 @@
 import Chart from 'chart.js';
 
-var topProducts = document.getElementById('topProductsChart').getContext('2d');
-export const topProductsChart = new Chart(topProducts, {
-  type: 'bar',
+var websieVisits = document.getElementById('website-visits').getContext('2d');
+export const websiteVisitsChart = new Chart(websieVisits, {
+  type: 'line',
+	pointLabelFontSize: 20,
   data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-          ],
-          borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-          ],
-          borderWidth: 1
+          data: [54, 63, 60, 65, 60, 68, 60],
+          borderWidth: 1,
+          fill: false,
+          borderColor: '#1a73e8',
+        	backgroundColor: '#fff',
+					borderWidth: 3,
+					pointBorderWidth: 2,
+					pointRadius: 6
       }]
   },
-  options: {
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
-      }
-  }
+	options: {
+		responsive: true, // Instruct chart js to respond nicely.
+		maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+		scales: {
+			xAxes: [{
+					gridLines: {
+							display:false
+					}
+			}]
+		},
+		legend: {
+			display: false,
+		}
+	}
 });

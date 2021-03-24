@@ -1,6 +1,7 @@
 extends ../layouts/main.pug
 block content
   include ./../mixins/breadscrumb.pug
+  h2.page-title.d-inline-block Dashboard
   +breadscrumb([['Home', '/index.html']], 'Dashboard')
   .row 
     .col-sm-6.col-xl-3
@@ -33,7 +34,7 @@ block content
           h2.stats-number  865
 
   .row 
-    .col-lg-8
+    .col-12
       .card.lastest-transactions
         .card-body
           h3.card-title Latest Transactions
@@ -41,46 +42,80 @@ block content
             table
               thead 
                 tr
+                  th ID
                   th Customer
                   th Date
                   th Amount
-                  th Status
+                  th(style="width: 100px") Status
               tbody 
                 tr 
+                  td #1
                   td Clayton Bates
                   td 8 May 2020
                   td $137.00
                   td
                     span.badge.success Approved
-                tr 
+                tr
+                  td #2 
                   td Clayton Bates
                   td 8 May 2020
                   td $137.00
                   td
                     span.badge.danger Rejected
-                tr 
+                tr
+                  td #3 
                   td Clayton Bates
                   td 8 May 2020
                   td $137.00
                   td
                     span.badge.warning Pending
-                tr 
+                tr
+                  td #4
                   td Clayton Bates
                   td 8 May 2020
                   td $137.00
                   td
                     span.badge.success Approved
-                tr 
-                  td Clayton Bates
-                  td 8 May 2020
-                  td $137.00
-                  td
-                    span.badge.success Approved
-    .col-lg-4
+    .col-md-8
+      .card 
+        .card-body
+          .card-title Website Visits
+          .chart-container 
+            canvas#website-visits
+    .col-md-4
       .card.project-status 
         .card-body 
           h3.card-title Project Status
           ul 
             li.project-status-item 
-              
+              .status-label 
+                span Completed 
+                span 5/10
+              .progress
+               .progress-bar.success(style="width: 50%")
+            li.project-status-item 
+              .status-label 
+                span In Progress 
+                span 10/10
+              .progress
+               .progress-bar(style="width: 100%")
+            li.project-status-item 
+              .status-label 
+                span Pending 
+                span 3/10
+              .progress
+               .progress-bar.warning(style="width: 30%")
+            li.project-status-item 
+              .status-label 
+                span Cancelled 
+                span 8/10
+              .progress
+               .progress-bar.danger(style="width: 80%")
+            li.project-status-item 
+              .status-label 
+                span On Hold 
+                span 2/10
+              .progress
+               .progress-bar.purple(style="width: 20%")
+
 

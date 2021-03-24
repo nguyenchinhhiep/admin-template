@@ -1,6 +1,6 @@
 // Background
 .bg-primary {
-  @include theme-aware('background', 'primary-color', true);
+  @include theme-aware('background', 'color-primary', true);
 }
 
 .bg-success {

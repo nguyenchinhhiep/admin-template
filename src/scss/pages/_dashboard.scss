@@ -2,10 +2,13 @@
   margin-bottom: 25px;
 }
 
+[class^="col-"]{
+  margin-bottom: 20px;
+}
+
 .stats {
   padding: 20px;
   color: $white;
-  margin-bottom: 30px;
   @include display-flex;
   @include align-items(center);
   @include justify-content(space-between);
@@ -31,7 +34,7 @@
     font-size: 3.5rem;
 
     .stats.bg-primary & {
-      @include theme-aware('color', 'primary-color');;
+      @include theme-aware('color', 'color-primary');;
     }
 
     .stats.bg-success & {
@@ -55,8 +58,33 @@
   }
 
   table {
-    th {
+    > thead > th:not(:last-of-type){
       min-width: 130px;
     }
   }
+}
+
+.card {
+  height: 100%;
+}
+
+.project-status {
+  li {
+    margin-bottom: 24px;
+  }
+  .status-label {
+    margin-bottom: 15px;
+    font-size: 13px;
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    > span:last-of-type {
+      @include theme-aware('color', 'text-tertiary');
+    }
+  }
+}
+
+.chart-container {
+  height: 253px;
 }

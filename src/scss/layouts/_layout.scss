@@ -15,9 +15,9 @@ main {
 
     }
     .content {
-        padding: 20px 30px;
+        padding: 30px;
         @include flex-grow(1);
-        @media(max-width: 991px){
+        @media(max-width: 765px){
             & {
                 padding-left: 15px;
                 padding-right: 15px;
@@ -28,3 +28,7 @@ main {
         padding: 65px 0 0 58px;
     }
 }
+
+.page-title {
+    font-weight: $font-weight-semibold;
+} 

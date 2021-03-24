@@ -1,1 +1,16 @@
 @import '~overlayscrollbars/css/OverlayScrollbars.min.css';
+
+.os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  width: 5px;
+  &.active, &:hover {
+    background-color: #999;
+  }
+
+  .theme-light & {
+    background-color: #d7d7d7;
+  }
+
+  .theme-dark & {
+    background-color: #424242;
+  }
+}
