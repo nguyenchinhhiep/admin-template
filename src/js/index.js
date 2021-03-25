@@ -3,6 +3,7 @@ import handleCollapse from './collapse';
 import toggleSidebarHandler, {handleSidebarNav, handleSidebarOverlay, resizeScreenHandler} from './sidebar';
 import OverlayScrollbars from 'overlayscrollbars';
 import { websiteVisitsChart } from './charts';
+import { handleFullscreen, handleSearchInMobileView } from './header';
 
 
 window.onload = () => {
@@ -14,6 +15,8 @@ window.onload = () => {
         handleCollapse(event);
         handleSidebarNav(event);
         handleSidebarOverlay(event);
+        handleFullscreen(event);
+        handleSearchInMobileView(event);
     }
     toggleSidebarHandler();
     resizeScreenHandler();

@@ -1,7 +1,7 @@
 .breadscrumb {
   display: block;
   margin-bottom: 25px;
-  @include theme-aware('color', 'text-secondary');
+  @include theme-aware('color', 'text-tertiary');
   &-item {
     display: inline-block;
     position: relative;

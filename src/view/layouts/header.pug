@@ -9,6 +9,7 @@ header
       form
         label.navbar-search-button(for="search-nav")
           i.bx.bx-search
+          i.bx.bx-arrow-back
         input.navbar-search-input#search-nav(type="text" placeholder="Search...")
     ul.navbar-right
       li.navbar-item.header-search-icon 
@@ -22,9 +23,13 @@ header
         #languages.dropdown-menu.dropdown-languages.slideInUp
           ul 
             li.dropdown-item 
-              a English
+              a
+                img(src=require('./../../assets/images/flags/en.png').default).flag
+                span English
             li.dropdown-item  
-              a Vietnamese  
+              a
+                img(src=require('./../../assets/images/flags/vi.png').default).flag
+                span Vietnamese
       li.navbar-item.navbar-notification.has-dropdown
         a.dropdown-toggle( aria-expanded='false' data-target='notificationDropdown')
           i.bx.bx-bell
