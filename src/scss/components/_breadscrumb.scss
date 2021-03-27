@@ -2,7 +2,7 @@
   font-size: 13px;
   display: block;
   margin-bottom: 25px;
-  @include theme-aware('color', 'text-tertiary');
+  // @include theme-aware('color', 'text-tertiary');
   &-item {
     display: inline-block;
     position: relative;

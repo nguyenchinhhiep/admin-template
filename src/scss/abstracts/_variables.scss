@@ -18,6 +18,18 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $box-shadow: 0 1px 4px 2px rgba(0, 0, 0, .1);
 
+// Color Map
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $gray-200,
+  dark: $dark
+);
+
 $themes: (
     'light': (
         'text-primary': $shark,
@@ -27,6 +39,7 @@ $themes: (
         'bg-secondary': $concrete,
         'bg-tertiary': $alabaster,
         'border-color-primary': $mine-shaft-lighter,
-        'border-color-secondary': $whisper
+        'border-color-secondary': $whisper,
+        'border-color-input': $alto
     )
 )

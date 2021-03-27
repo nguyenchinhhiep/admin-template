@@ -14,20 +14,10 @@
     text-align: center;
     transition: width ease $transition;
 
-    &.success {
-      background: $success;
-    }
-
-    &.danger {
-      background: $danger;
-    }
-
-    &.warning {
-      background: $warning;
-    }
-
-    &.purple {
-      background: $purple;
+    @each $name, $value in $colors {
+      &.#{$name}{
+        background-color: $value;
+      }
     }
   }
 }

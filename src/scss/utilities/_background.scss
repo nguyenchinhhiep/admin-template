@@ -1,18 +1,8 @@
 // Background
-.bg-primary {
-  @include theme-aware('background', 'color-primary', true);
-}
-
-.bg-success {
-  background: $success !important;
-}
-
-.bg-danger {
-  background: $danger !important ;
-}
-
-.bg-warning {
-  background: $warning !important;
+@each $name, $value in $colors {
+  .bg-#{$name}{
+    background-color: $value !important;
+  }
 }
 
 .bg-gradient {

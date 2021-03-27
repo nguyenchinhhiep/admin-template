@@ -1,121 +1,122 @@
 extends ../layouts/main.pug
 block content
-  include ./../mixins/breadscrumb.pug
-  h2.page-title.d-inline-block.mr-lg-2.mb-1 Dashboard
-  +breadscrumb([['Home', '/index.html']], 'Dashboard')
-  .row.mt-2 
-    .col-sm-4.col-xl-3
-      .stats.bg-primary.rounded.bg-gradient
-        .stats-icon
-          i.bx.bx-map
-        .stats-info
-          .stats-title Earnings
-          h2.stats-number  865
-    .col-sm-4.col-xl-3 
-      .stats.bg-success.rounded.bg-gradient
-        .stats-icon
-          i.bx.bx-line-chart
-        .stats-info
-          .stats-title Sales
-          h2.stats-number  865
-    .col-sm-4.col-xl-3 
-      .stats.bg-danger.rounded.bg-gradient
-        .stats-icon
-          i.bx.bx-star
-        .stats-info
-          .stats-title Visits
-          h2.stats-number  865
-    .col-sm-4.col-xl-3 
-      .stats.bg-warning.rounded.bg-gradient
-        .stats-icon
-          i.bx.bx-heart
-        .stats-info
-          .stats-title Likes
-          h2.stats-number  865
+  .dashboard 
+    include ./../mixins/breadscrumb.pug
+    h2.page-title.d-inline-block.mr-lg-2.mb-1 Dashboard
+    +breadscrumb([['Home', '/index.html']], 'Dashboard')
+    .row.mt-2
+      .col-sm-4.col-xl-3
+        .stats.bg-primary.rounded.bg-gradient
+          .stats-icon
+            i.bx.bx-map
+          .stats-info
+            .stats-title Earnings
+            h2.stats-number  865
+      .col-sm-4.col-xl-3 
+        .stats.bg-success.rounded.bg-gradient
+          .stats-icon
+            i.bx.bx-line-chart
+          .stats-info
+            .stats-title Sales
+            h2.stats-number  865
+      .col-sm-4.col-xl-3 
+        .stats.bg-danger.rounded.bg-gradient
+          .stats-icon
+            i.bx.bx-star
+          .stats-info
+            .stats-title Visits
+            h2.stats-number  865
+      .col-sm-4.col-xl-3 
+        .stats.bg-warning.rounded.bg-gradient
+          .stats-icon
+            i.bx.bx-heart
+          .stats-info
+            .stats-title Likes
+            h2.stats-number  865
 
-  .row 
-    .col-12
-      .card.lastest-transactions
-        .card-body
-          h3.card-title Latest Transactions
-          .table-container
-            table
-              thead 
-                tr
-                  th ID
-                  th Customer
-                  th Date
-                  th Amount
-                  th(style="width: 100px") Status
-              tbody 
-                tr 
-                  td #1
-                  td Clayton Bates
-                  td 8 May 2020
-                  td $137.00
-                  td
-                    span.badge.success Approved
-                tr
-                  td #2 
-                  td Clayton Bates
-                  td 8 May 2020
-                  td $137.00
-                  td
-                    span.badge.danger Rejected
-                tr
-                  td #3 
-                  td Clayton Bates
-                  td 8 May 2020
-                  td $137.00
-                  td
-                    span.badge.warning Pending
-                tr
-                  td #4
-                  td Clayton Bates
-                  td 8 May 2020
-                  td $137.00
-                  td
-                    span.badge.success Approved
-    .col-md-8
-      .card 
-        .card-body
-          .card-title Website Visits
-          .chart-container 
-            canvas#website-visits
-    .col-md-4
-      .card.project-status 
-        .card-body 
-          h3.card-title Project Status
-          ul 
-            li.project-status-item 
-              .status-label 
-                span Completed 
-                span 5/10
-              .progress
-               .progress-bar.success(style="width: 50%")
-            li.project-status-item 
-              .status-label 
-                span In Progress 
-                span 10/10
-              .progress
-               .progress-bar(style="width: 100%")
-            li.project-status-item 
-              .status-label 
-                span Pending 
-                span 3/10
-              .progress
-               .progress-bar.warning(style="width: 30%")
-            li.project-status-item 
-              .status-label 
-                span Cancelled 
-                span 8/10
-              .progress
-               .progress-bar.danger(style="width: 80%")
-            li.project-status-item 
-              .status-label 
-                span On Hold 
-                span 2/10
-              .progress
-               .progress-bar.purple(style="width: 20%")
+    .row 
+      .col-12
+        .card.lastest-transactions
+          .card-body
+            h3.card-title Latest Transactions
+            .table-container
+              table
+                thead 
+                  tr
+                    th ID
+                    th Customer
+                    th Date
+                    th Amount
+                    th(style="width: 100px") Status
+                tbody 
+                  tr 
+                    td #1
+                    td Clayton Bates
+                    td 8 May 2020
+                    td $137.00
+                    td
+                      span.badge.success Approved
+                  tr
+                    td #2 
+                    td Clayton Bates
+                    td 8 May 2020
+                    td $137.00
+                    td
+                      span.badge.danger Rejected
+                  tr
+                    td #3 
+                    td Clayton Bates
+                    td 8 May 2020
+                    td $137.00
+                    td
+                      span.badge.warning Pending
+                  tr
+                    td #4
+                    td Clayton Bates
+                    td 8 May 2020
+                    td $137.00
+                    td
+                      span.badge.success Approved
+      .col-md-8
+        .card 
+          .card-body
+            .card-title Website Visits
+            .chart-container 
+              canvas#website-visits
+      .col-md-4
+        .card.project-status 
+          .card-body 
+            h3.card-title Project Status
+            ul 
+              li.project-status-item 
+                .status-label 
+                  span Completed 
+                  span 5/10
+                .progress
+                  .progress-bar.success(style="width: 50%")
+              li.project-status-item 
+                .status-label 
+                  span In Progress 
+                  span 10/10
+                .progress
+                  .progress-bar(style="width: 100%")
+              li.project-status-item 
+                .status-label 
+                  span Pending 
+                  span 3/10
+                .progress
+                  .progress-bar.warning(style="width: 30%")
+              li.project-status-item 
+                .status-label 
+                  span Cancelled 
+                  span 8/10
+                .progress
+                  .progress-bar.danger(style="width: 80%")
+              li.project-status-item 
+                .status-label 
+                  span On Hold 
+                  span 2/10
+                .progress
+                  .progress-bar.secondary(style="width: 20%")
 
 

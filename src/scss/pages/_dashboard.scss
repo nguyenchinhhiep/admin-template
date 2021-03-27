@@ -1,9 +1,10 @@
+.dashboard {
+  [class^="col-"]{
+    margin-bottom: 20px;
+  }
+}
 .welcome-heading {
   margin-bottom: 25px;
-}
-
-[class^="col-"]{
-  margin-bottom: 20px;
 }
 
 .stats {

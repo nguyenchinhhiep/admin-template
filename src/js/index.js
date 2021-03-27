@@ -7,9 +7,7 @@ import { handleFullscreen, handleSearchInMobileView } from './header';
 
 
 window.onload = () => {
-    const sidebarScrollbarInstance = OverlayScrollbars(document.querySelector('.sidebar-nav'), {});
-    const notificationListScrollbarInstance = OverlayScrollbars(document.querySelector('.notification-list'), {});
-    const tableContainerScrollbarInstance = OverlayScrollbars(document.querySelector('.table-container'), {});
+    const ScrollbarInstance = OverlayScrollbars(document.querySelector('.custom-scrollbar'), {});
     window.onclick = (event) => {
         handleDropdowns(event);
         handleCollapse(event);

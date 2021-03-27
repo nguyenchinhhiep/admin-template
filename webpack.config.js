@@ -88,7 +88,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/view/pages/dashboard.pug'
+            template: 'src/view/pages/forms.pug'
         }),
         new MiniCssExtractPlugin({
             filename: "styles.css"

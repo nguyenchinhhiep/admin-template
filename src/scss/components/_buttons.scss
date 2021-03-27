@@ -1,14 +1,3 @@
-$buttonColors: (
-  primary: $primary,
-  secondary: $secondary,
-  success: $success,
-  info: $info,
-  warning: $warning,
-  danger: $danger,
-  light: $gray-200,
-  dark: $dark
-);
-
 .btn {
   display: inline-block;
   border: 1px solid transparent;
@@ -52,7 +41,7 @@ $buttonColors: (
   background: transparent;
 }
 
-@each $name, $value in $buttonColors {
+@each $name, $value in $colors {
 
     .btn-#{$name}{
       background: $value;
