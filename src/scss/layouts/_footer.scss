@@ -6,7 +6,7 @@ footer {
   @include theme-aware('color', 'text-tertiary');
 
   span {
-    @include theme-aware('color', 'color-primary');
+    color: $primary;
     font-weight: $font-weight-medium;
   }
 }

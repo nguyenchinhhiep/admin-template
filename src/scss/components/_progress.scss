@@ -6,7 +6,7 @@
   border-radius: 0.25rem;
 
   &-bar {
-    @include theme-aware('background', 'color-primary');
+    background: $primary;
     display: flex;
     flex-direction: column;
     color: $white;

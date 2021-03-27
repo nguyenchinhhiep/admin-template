@@ -34,7 +34,7 @@
     font-size: 3.5rem;
 
     .stats.bg-primary & {
-      @include theme-aware('color', 'color-primary');;
+      color: $primary;;
     }
 
     .stats.bg-success & {

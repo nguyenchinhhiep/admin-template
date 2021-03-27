@@ -1,0 +1,65 @@
+extends ../layouts/main.pug
+block content
+  include ./../mixins/breadscrumb.pug
+  h2.page-title.d-inline-block.mr-lg-2.mb-1 Buttons
+  +breadscrumb([['Home', '/index.html']], 'Buttons')
+  .row.mt-2 
+    .col-12 
+      .card
+        .card-body 
+          .card-title.font-weight-normal Default
+          button.mb-1.mr-1.btn.default.btn-primary Primary
+          button.mb-1.mr-1.btn.default.btn-secondary Secondary
+          button.mb-1.mr-1.btn.default.btn-success Success
+          button.mb-1.mr-1.btn.default.btn-info Info
+          button.mb-1.mr-1.btn.default.btn-warning Warning
+          button.mb-1.mr-1.btn.default.btn-danger Danger
+          button.mb-1.mr-1.btn.default.btn-light Light
+          button.mb-1.mr-1.btn.default.btn-dark Dark
+    .col-12 
+      .card
+        .card-body 
+          .card-title.font-weight-normal Rounded
+          button.mb-1.mr-1.btn.btn-primary Primary
+          button.mb-1.mr-1.btn.btn-secondary Secondary
+          button.mb-1.mr-1.btn.btn-success Success
+          button.mb-1.mr-1.btn.btn-info Info
+          button.mb-1.mr-1.btn.btn-warning Warning
+          button.mb-1.mr-1.btn.btn-danger Danger
+          button.mb-1.mr-1.btn.btn-light Light
+          button.mb-1.mr-1.btn.btn-dark Dark
+    .col-12 
+      .card
+        .card-body 
+          .card-title.font-weight-normal Outline
+          button.mb-1.mr-1.btn.btn-outline-primary Primary
+          button.mb-1.mr-1.btn.btn-outline-secondary Secondary
+          button.mb-1.mr-1.btn.btn-outline-success Success
+          button.mb-1.mr-1.btn.btn-outline-info Info
+          button.mb-1.mr-1.btn.btn-outline-warning Warning
+          button.mb-1.mr-1.btn.btn-outline-danger Danger
+          button.mb-1.mr-1.btn.btn-outline-light Light
+          button.mb-1.mr-1.btn.btn-outline-dark Dark
+    .col-12 
+      .card
+        .card-body 
+          .card-title.font-weight-normal Sizings
+          h6.font-weight-normal.mb-2 Large Button
+          button.mb-1.mr-1.btn.btn-lg.btn-primary Primary
+          button.mb-1.mr-1.btn.btn-lg.btn-secondary Secondary
+          button.mb-1.mr-1.btn.btn-lg.btn-success Success
+          h6.font-weight-normal.my-2 Small Button
+          button.mb-1.mr-1.btn.btn-sm.btn-primary Primary
+          button.mb-1.mr-1.btn.btn-sm.btn-secondary Secondary
+          button.mb-1.mr-1.btn.btn-sm.btn-success Success
+          h6.font-weight-normal.my-2 Extra Small Button
+          button.mb-1.mr-1.btn.btn-xs.btn-primary Primary
+          button.mb-1.mr-1.btn.btn-xs.btn-secondary Secondary
+          button.mb-1.mr-1.btn.btn-xs.btn-success Success
+          h6.font-weight-normal.my-2 Block Button
+          button.mb-1.mr-1.btn.btn-lg.btn-primary.btn-block Primary
+          button.mb-1.mr-1.btn.btn-lg.btn-secondary.btn-block Secondary
+          h6.font-weight-normal.my-2 Disabled Button
+          button.mb-1.mr-1.btn.btn-primary(disabled) Primary
+          button.mb-1.mr-1.btn.btn-secondary(disabled) Secondary
+          button.mb-1.mr-1.btn.btn-success(disabled) Success

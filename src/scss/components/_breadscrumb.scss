@@ -1,4 +1,5 @@
 .breadscrumb {
+  font-size: 13px;
   display: block;
   margin-bottom: 25px;
   @include theme-aware('color', 'text-tertiary');
@@ -8,20 +9,20 @@
 
     &:not(.current){
       &:hover {
-        @include theme-aware('color', 'color-primary');
+        color: $primary;
       }
     }
   }
 
   &-item + &-item {
-    padding-left: 23px;
+    padding-left: 20px;
     &::before {
       content: '\ec8f';
       font-family: boxicons;
       display: inline-block;
       font-size: 1.2rem;
       position: absolute;
-      left: 6px;
+      left: 3px;
       bottom: 2px;
     }
   }

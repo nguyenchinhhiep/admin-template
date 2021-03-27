@@ -1,36 +1,22 @@
 /* Variables */
 $primary:       $royal-blue !default;
 $secondary:     $gray-600 !default;
-$accent:        $wild-strawberry !default;
-$success:       $green !default;
-$info:          $cyan !default;
+$accent:        $cinnabar !default;
+$success:       $eucalyptus !default;
+$info:          $eastern-blue !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 
-
-// Theme Dark
-$text-primary-dark: #e4e6eb !default;
-$text-secondary-dark: #b0b3b8 !default;
-$text-tertiary-dark: #b0b3b8 !default;
-$bg-primary-dark: #35363A !default;
-$bg-secondary-dark: #18191a !default;
-$bg-tertiary-dark: #3a3b3c !default;
-$border-primary-dark: #363738 !default;
-$border-secondary-dark: #ebe9f1 !default;
-
 $transition: 0.4s;
 $border-radius: 12px;
 $font-family: 'Inter', sans-serif;
-
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
-
 $box-shadow: 0 1px 4px 2px rgba(0, 0, 0, .1);
-
 
 $themes: (
     'light': (
@@ -41,18 +27,6 @@ $themes: (
         'bg-secondary': $concrete,
         'bg-tertiary': $alabaster,
         'border-color-primary': $mine-shaft-lighter,
-        'border-color-secondary': $whisper,
-        'color-primary': $primary
-    ),
-    // 'dark': (
-    //     'text-primary': $text-primary-dark,
-    //     'text-secondary': $text-secondary-dark,
-    //     'text-tertiary': $text-tertiary-dark,
-    //     'bg-primary': $bg-primary-dark,
-    //     'bg-secondary': $bg-secondary-dark,
-    //     'bg-tertiary': $bg-tertiary-dark,
-    //     'border-color-primary': $border-primary-dark,
-    //     'border-color-secondary': $border-secondary-dark,
-    //     'color-primary': $primary
-    // )
+        'border-color-secondary': $whisper
+    )
 )

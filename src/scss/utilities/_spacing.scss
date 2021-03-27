@@ -38,6 +38,8 @@ $spacers: (
     .#{$abbrev}r-#{$size} { #{$prop}-right:  $length-x !important; }
     .#{$abbrev}b-#{$size} { #{$prop}-bottom: $length-y !important; }
     .#{$abbrev}l-#{$size} { #{$prop}-left:   $length-x !important; }
+    .#{$abbrev}x-#{$size} { #{$prop}-left:   $length-x !important; #{$prop}-right:   $length-x !important; }
+    .#{$abbrev}y-#{$size} { #{$prop}-top:   $length-x !important; #{$prop}-bottom:   $length-y !important;}
   }
 }
 @each $name, $value in $grid-breakpoints {
@@ -51,6 +53,8 @@ $spacers: (
         .#{$abbrev}r-#{$name}-#{$size} { #{$prop}-right:  $length-x !important; }
         .#{$abbrev}b-#{$name}-#{$size} { #{$prop}-bottom: $length-y !important; }
         .#{$abbrev}l-#{$name}-#{$size} { #{$prop}-left:   $length-x !important; }
+        .#{$abbrev}x-#{$name}-#{$size} { #{$prop}-left:   $length-x !important;  #{$prop}-right:   $length-x !important; }
+        .#{$abbrev}y-#{$name}-#{$size} { #{$prop}-top:   $length-y !important; #{$prop}-bottom:   $length-y !important; }
       }
     }
   }

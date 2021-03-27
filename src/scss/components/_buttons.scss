@@ -1,0 +1,89 @@
+$buttonColors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $gray-200,
+  dark: $dark
+);
+
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 10rem;
+  transition: background ease .15s, border-color ease .15s, color ease .15s;
+  line-height: 1.5;
+  padding: .8rem 2rem;
+  font-size: 1.3rem;
+
+  &.btn-lg {
+    padding: 1rem 4rem;
+    font-weight: $font-weight-medium;
+    font-size: 1.4rem;
+    letter-spacing: .5px;
+  }
+
+  &.btn-sm {
+    padding: 0.7rem 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  &.btn-xs {
+    padding: 0.4rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  &.default {
+    border-radius: 2px;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+[class^="btn-outline"]{
+  background: transparent;
+}
+
+@each $name, $value in $buttonColors {
+
+    .btn-#{$name}{
+      background: $value;
+      border-color: $value;
+      @if $name != light {
+        color: $white;
+      }
+      &:hover {
+        background: darken($value, 8%);
+        border-color: darken($value, 8%);
+      }
+
+      &:disabled {
+        background: lighten($value, 8%);
+        border-color: lighten($value, 8%);
+        opacity: 0.85;
+        cursor: auto;
+      }
+    }
+
+    .btn-outline-#{$name}{
+      border-color: $value;
+      color: $value;
+
+      &:hover {
+        background: $value;
+        @if($name == light){
+          color: inherit;
+        } @else {
+          color:$white;
+        }
+      }
+    }
+}
