@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: $font-weight-medium;
 }
 
 h1 {
@@ -44,7 +44,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 // List style
@@ -60,10 +60,11 @@ a {
 }
 
 // Button, Inputs
-button, input, select {
+button, input, select, optgroup, textarea {
   border: 0;
   background: transparent;
   color: inherit;
+  font-family: inherit;
   outline: 0;
 }
 

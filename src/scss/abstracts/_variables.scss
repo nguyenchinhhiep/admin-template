@@ -34,12 +34,12 @@ $themes: (
     'light': (
         'text-primary': $shark,
         'text-secondary': $mine-shaft,
-        'text-tertiary': $gray,
+        'text-light': $gray,
         'bg-primary': $white,
-        'bg-secondary': $concrete,
-        'bg-tertiary': $alabaster,
+        'bg-secondary': $alabaster,
+        'bg-tertiary': $alto,
         'border-color-primary': $mine-shaft-lighter,
-        'border-color-secondary': $whisper,
-        'border-color-input': $alto
+        'border-color-secondary': $whisper,s
+        'border-color-custom-input': $gray-600
     )
 )

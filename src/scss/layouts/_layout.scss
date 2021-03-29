@@ -1,6 +1,6 @@
 /* Layout */
 main {
-    @include theme-aware('background', 'bg-tertiary');
+    @include theme-aware('background', 'bg-secondary');
     width: 100%;
     min-height: 100%;
     padding: 65px 0 0 250px;

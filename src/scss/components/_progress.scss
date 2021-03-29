@@ -2,7 +2,7 @@
   @include display-flex;
   height: 4px;
   overflow: hidden;
-  @include theme-aware('background', 'bg-tertiary');
+  @include theme-aware('background', 'bg-secondary');
   border-radius: 0.25rem;
 
   &-bar {

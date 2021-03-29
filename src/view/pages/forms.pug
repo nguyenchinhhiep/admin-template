@@ -4,7 +4,7 @@ block content
   h2.page-title.d-inline-block.mr-lg-2.mb-1 Forms
   +breadscrumb([['Home', '/index.html']], 'Forms')
   .row 
-    .col-12 
+    .col-12.mb-2 
       .card 
         .card-body
           .card-title.font-weight-normal Basis 
@@ -44,6 +44,43 @@ block content
                     label(for="zip") Zip 
                     input.form-control(type="text" placeholder="Zip")
             .col-12 
-              button.btn.btn-primary Submit  
+              button.btn.btn-primary Submit
+    .col-12 
+      .card 
+        .card-body
+          .card-title.font-weight-normal Custom Elements
+          .mb-3
+            h6.font-weight-normal.mb-2 Checkboxes
+            .custom-control.custom-checkbox
+              input.custom-control-input(type="checkbox")#customCheckbox
+              label.custom-control-label(for="customCheckbox") Check this custom checkbox
+            .custom-control.custom-checkbox
+              input.custom-control-input(type="checkbox")#customCheckbox2
+              label.custom-control-label(for="customCheckbox2") Or this one
+            .custom-control.custom-checkbox
+              input.custom-control-input(type="checkbox" disabled)#customCheckbox3
+              label.custom-control-label(for="customCheckbox3") Disabled checkbox
+          .mb-3
+            h6.font-weight-normal.mb-2 Radios
+            .custom-control.custom-radio
+              input.custom-control-input(type="radio" name="customRadio")#customRadio1
+              label.custom-control-label(for="customRadio1") Toggle this custom radio
+            .custom-control.custom-radio
+              input.custom-control-input(type="radio" name="customRadio")#customRadio2
+              label.custom-control-label(for="customRadio2") Or this one
+            .custom-control.custom-radio
+              input.custom-control-input(type="radio" name="customRadio" disabled)#customRadio3
+              label.custom-control-label(for="customRadio3") Disabled radio
+          .mb-3
+            h6.font-weight-normal.mb-2 Switch
+            .custom-switch.d-inline-block
+              input.custom-control-input(type="checkbox")#customSwitch
+              label.switch-control-label(for="customSwitch")
+            .custom-switch.custom-switch-small.d-inline-block.ml-2
+              input.custom-control-input(type="checkbox")#customSwitch2
+              label.switch-control-label(for="customSwitch2")
+          .mb-3
+            h6.font-weight-normal.mb-2 Rating
+
 
               

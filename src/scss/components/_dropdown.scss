@@ -28,7 +28,7 @@
     transition: background ease $transition;
 
     &:hover {
-        @include theme-aware('background', 'bg-tertiary');
+        @include theme-aware('background', 'bg-secondary');
     }
 }
 

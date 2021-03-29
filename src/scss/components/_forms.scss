@@ -13,7 +13,7 @@
   display: block;
   width: 100%;
   border: 1px solid;
-  @include theme-aware('border-color', 'border-color-input');
+  @include theme-aware('border-color', 'bg-tertiary');
   border-radius: 2px;
   padding: 0.8rem 1.2rem;
   color: inherit;
@@ -23,4 +23,136 @@
   &::placeholder {
     @include theme-aware('color', 'text-tertiary');
   }
+}
+// Custom Controls
+.custom-control {
+  position: relative;
+  display: block;
+  padding-left: 23px;
+  min-height: 25px;
+}
+
+.custom-control-input {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+
+  &:checked ~ .custom-control-label::before {
+    background: $primary;
+    border-color: $primary;
+  }
+
+  &:checked ~ .custom-control-label::after {
+    font-family: 'boxicons' !important;
+    color: #fff;
+  }
+
+  &:disabled ~ .custom-control-label::before {
+    @include theme-aware('background', 'bg-tertiary');
+  }
+
+  .custom-checkbox &:checked ~ .custom-control-label::after {
+    content: '\e9a4';
+  }
+
+  .custom-radio &:checked ~ .custom-control-label::after {
+    content: '\ec9b';
+    font-size: 6px;
+    left: -23.3px;
+  }
+}
+
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  font-size: 1.3rem;
+
+  &::before, &::after {
+    background: initial;
+    transition: background ease $transition, border-color ease $transition;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    font-size: 13px;
+    content: '';
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    left: -23px;
+    top: 0;
+    pointer-events: none;
+
+    .custom-checkbox & {
+      border-radius: 3px;
+    }
+
+    .custom-radio & {
+      border-radius: 50%;
+    }
+  }
+
+  &::before {
+    border: 1px solid;
+    @include theme-aware('border-color','bg-tertiary');
+  }
+}
+
+// Switch
+.custom-switch {
+  position: relative;
+
+  .custom-control-input:checked ~ .switch-control-label {
+    background: $primary;
+
+    &::before {
+      left: calc(100% - 2.2rem);
+    }
+  }
+
+  .switch-control-label {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 10rem;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    @include theme-aware('background', 'bg-tertiary');
+    transition: background ease $transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: .3rem;
+      @include theme-aware('background', 'bg-primary');
+      transition: left ease $transition;
+    }
+  }
+
+  &.custom-switch-small {
+    .switch-control-label {
+      width: 3.4rem;
+      height: 1.9rem;
+      &::before {
+        width: 1.2rem;
+        height: 1.2rem;
+        left: .2rem;
+      }
+    }
+
+    .custom-control-input:checked ~ .switch-control-label::before {
+      left: calc(100% - 1.4rem);
+    }
+  }
+
 }

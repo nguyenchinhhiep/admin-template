@@ -93,7 +93,7 @@ header {
         width: 100%;
         @include display-flex;
         @include justify-content(space-between);
-        @include theme-aware('background', 'bg-tertiary');
+        @include theme-aware('background', 'bg-secondary');
         border: 1px solid transparent;
         border-radius: 10rem;
         @include theme-aware('color', 'text-tertiary');
@@ -252,7 +252,7 @@ header {
         }
         
         &:hover {
-            @include theme-aware('background', 'bg-tertiary');
+            @include theme-aware('background', 'bg-secondary');
         }
     }
 
@@ -304,7 +304,7 @@ header {
             transition: background ease $transition;
 
             &:hover, &:active, &:focus {
-                @include theme-aware('background', 'bg-tertiary');
+                @include theme-aware('background', 'bg-secondary');
             }
         }
 

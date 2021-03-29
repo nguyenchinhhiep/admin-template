@@ -62,7 +62,7 @@
     .nav-item.active {
         > .nav-link{
             color: $primary;
-            @include theme-aware('background', 'bg-tertiary');
+            @include theme-aware('background', 'bg-secondary');
             &::before {
                 content: '';
                 height: 100%;
@@ -97,7 +97,7 @@
         }
         
         &:hover, &:active {
-            @include theme-aware('background', 'bg-tertiary');
+            @include theme-aware('background', 'bg-secondary');
 
             .nav-link-icon {
                 transform: rotateY(180deg);
