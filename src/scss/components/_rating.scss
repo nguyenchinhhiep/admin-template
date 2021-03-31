@@ -1,0 +1,28 @@
+.rating {
+  display: inline-block;
+  position: relative;
+  > label {
+    float: right;
+  }
+  
+  &-star {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    @include theme-aware('color','bg-tertiary');
+    cursor: pointer;
+
+    input[type="radio"]:checked ~ &, input[type="radio"]:not(:disabled) ~ &:hover ~ &, input[type="radio"]:not(:disabled) + &:hover {
+      color: $primary;
+    }
+
+    &:hover ~ input[type="radio"]:checked:not(:disabled) ~ &, input[type="radio"]:checked:not(:disabled) ~ &:hover, input[type="radio"]:checked:not(:disabled) ~ &:hover ~ & {
+      color: lighten($primary, 20%);
+    }
+
+    &::after {
+      content: '\ee0a';
+      font-family: 'boxicons' !important;
+    }
+  }
+}

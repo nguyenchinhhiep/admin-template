@@ -51,24 +51,24 @@ block content
           .card-title.font-weight-normal Custom Elements
           .mb-3
             h6.font-weight-normal.mb-2 Checkboxes
-            .custom-control.custom-checkbox
+            label.custom-control.custom-checkbox
               input.custom-control-input(type="checkbox")#customCheckbox
               label.custom-control-label(for="customCheckbox") Check this custom checkbox
-            .custom-control.custom-checkbox
+            label.custom-control.custom-checkbox
               input.custom-control-input(type="checkbox")#customCheckbox2
               label.custom-control-label(for="customCheckbox2") Or this one
-            .custom-control.custom-checkbox
+            label.custom-control.custom-checkbox
               input.custom-control-input(type="checkbox" disabled)#customCheckbox3
               label.custom-control-label(for="customCheckbox3") Disabled checkbox
           .mb-3
             h6.font-weight-normal.mb-2 Radios
-            .custom-control.custom-radio
+            label.custom-control.custom-radio
               input.custom-control-input(type="radio" name="customRadio")#customRadio1
               label.custom-control-label(for="customRadio1") Toggle this custom radio
-            .custom-control.custom-radio
+            label.custom-control.custom-radio
               input.custom-control-input(type="radio" name="customRadio")#customRadio2
               label.custom-control-label(for="customRadio2") Or this one
-            .custom-control.custom-radio
+            label.custom-control.custom-radio
               input.custom-control-input(type="radio" name="customRadio" disabled)#customRadio3
               label.custom-control-label(for="customRadio3") Disabled radio
           .mb-3
@@ -81,6 +81,32 @@ block content
               label.switch-control-label(for="customSwitch2")
           .mb-3
             h6.font-weight-normal.mb-2 Rating
-
+            .row 
+              .col-sm-6.mb-2
+                label.mb-1.d-block Interactive
+                .rating
+                  input(type="radio" name="rating1" value="5")#start5.custom-control-input
+                  label(for="start5").rating-star
+                  input(type="radio" name="rating1" value="4")#start4.custom-control-input
+                  label(for="start4").rating-star
+                  input(type="radio" name="rating1" value="3")#start3.custom-control-input
+                  label(for="start3").rating-star
+                  input(type="radio" name="rating1" value="2")#start2.custom-control-input
+                  label(for="start2").rating-star
+                  input(type="radio" name="rating1" value="1")#start1.custom-control-input
+                  label(for="start1").rating-star 
+              .col-sm-6.mb-2
+                label.mb-1.d-block Readonly
+                .rating
+                  input(type="radio" name="rating2" value="5" disabled)#start10.custom-control-input
+                  label(for="start10").rating-star
+                  input(type="radio" name="rating2" value="4" disabled)#start9.custom-control-input
+                  label(for="start9").rating-star
+                  input(type="radio" name="rating2" value="3" disabled)#start8.custom-control-input
+                  label(for="start8").rating-star
+                  input(type="radio" name="rating2" value="2" disabled checked)#start7.custom-control-input
+                  label(for="start7").rating-star
+                  input(type="radio" name="rating2" value="1" disabled)#start6.custom-control-input
+                  label(for="start6").rating-star
 
               

@@ -14,7 +14,7 @@
   width: 100%;
   border: 1px solid;
   @include theme-aware('border-color', 'bg-tertiary');
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.8rem 1.2rem;
   color: inherit;
   &:focus {
@@ -146,12 +146,12 @@
       &::before {
         width: 1.2rem;
         height: 1.2rem;
-        left: .2rem;
+        left: .3rem;
       }
     }
 
     .custom-control-input:checked ~ .switch-control-label::before {
-      left: calc(100% - 1.4rem);
+      left: calc(100% - 1.5rem);
     }
   }
 
