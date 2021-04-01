@@ -1,0 +1,21 @@
+extends ../layouts/main.pug
+block content
+  include ./../mixins/breadscrumb.pug
+  h2.page-title.d-inline-block.mr-lg-2.mb-1 Toast
+  +breadscrumb([['Home', '/index.html']], 'Toast')
+  .row 
+    .col-12
+      .card 
+        .card-body 
+          button.btn.btn-success.mr-1 Success
+          button.btn.btn-danger.mr-1 Error
+          button.btn.btn-warning.mr-1 Warning
+  .toast-container
+    .toast.toast--error.toast--dismissable.toast--lower
+      i.toast-icon.toast-icon--error
+      .toast-message Register successfully
+      button.toast-dismiss
+    .toast.toast--success.toast--dismissable.toast--lower
+      i.toast-icon.toast-icon--success
+      .toast-message Register successfully
+      button.toast-dismiss

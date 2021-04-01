@@ -2,6 +2,10 @@
   [class^="col-"]{
     margin-bottom: 20px;
   }
+
+  .card {
+    height: 100%;
+  }
 }
 .welcome-heading {
   margin-bottom: 25px;
@@ -63,10 +67,6 @@
       min-width: 130px;
     }
   }
-}
-
-.card {
-  height: 100%;
 }
 
 .project-status {
