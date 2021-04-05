@@ -2,10 +2,9 @@
 
 // Placeholder classes
 %header-item {
-    padding: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    height: 100%;
+    padding: 0 1.6rem;
+    position: relative;
 }
 
 
@@ -16,7 +15,6 @@ header {
     width: 100%;
     height: 65px;
     @include display-flex();
-    padding: 10px 12px;
     // border-bottom: 1px solid;
     // @include theme-aware('border-color', 'border-color-secondary');
     box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.15);
@@ -26,26 +24,31 @@ header {
     i {
         font-size: 2.4rem;
     }
+    
+    .dropdown-menu {
+        top: calc(100% - 5px);
+    }
 
     .dropdown-toggle.show:not(.profile-toggle){
-        @include theme-aware('background','bg-secondary');
+        color: $primary;
     }
 }
 
 .navbar {
     @include display-flex();
     @include flex-grow(1);
-    // @include justify-content(space-between);
 }
 
 .navbar-left {
     @include display-flex;
-    @include align-items(center);
     width: 218px;
     margin-right: 20px;
 }
 
 .navbar-brand {
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
     h1 {
         font-weight: $font-weight-extrabold;
         font-size: 23px;
@@ -53,16 +56,12 @@ header {
 }
 
 .toggle-sidebar {
-   @extend %header-item;
-    margin-right: 15px;
     @include display-flex;
     @include justify-content(center);
     @include align-items(center);
+    padding: 0 2rem;
 }
 
-.toggle-sidebar:active{
-    @include theme-aware('background', 'bg-secondary');
-}
 
 
 .navbar-search {
@@ -157,16 +156,16 @@ header {
 }
 
 .navbar-item {
-    margin-right: 15px;
     > a {
         @include display-flex;
         @include justify-content(center);
         @include align-items(center);
         @extend %header-item;
         cursor: pointer;
+        transition: color ease $transition;
 
-        &:active {
-            @include theme-aware('background', 'bg-secondary');
+        &:hover {
+            color: $primary;
         }
     }
 }
@@ -191,26 +190,32 @@ header {
 
     &-badge {
         position: absolute;
-        right: 0px;
-        top: 0px;
+        right: .8rem;
+        top: 1.3rem;
         font-size: 1rem;
         font-weight: $font-weight-medium;;
         background-color: $danger;
         color: $white;
-        padding: 3px 5.5px;
+        padding: 2px 4.5px;
         border-radius: 10rem;
+        border: 2px solid;
+        @include theme-aware('border-color','bg-primary');
     }
 
 }
 
 .navbar-profile {
+    > a {
+        padding-right: 2rem;
+    }
     img {
         width: 40px;
         height: 40px;
         object-fit: cover;
         border-radius: 50%;
+        border: 2px solid;
+        @include theme-aware('border-color', 'bg-primary');
     }
-    
 }
 
 .dropdown-notification {
@@ -317,7 +322,7 @@ header {
 }
 .navbar-languages {
     > a {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 }
 .dropdown-languages {

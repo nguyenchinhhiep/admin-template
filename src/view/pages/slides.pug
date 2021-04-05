@@ -1,0 +1,33 @@
+extends ../layouts/main.pug
+block content
+  include ./../mixins/breadscrumb.pug
+  h2.page-title.d-inline-block.mr-lg-2.mb-1 Slides
+  +breadscrumb([['Home', '/index.html']], 'Slides')
+  .row
+    .col-12 
+      .card 
+        .card-body 
+          .card-title.font-weight-normal Slide Fullscreen  
+          .slide-fullscreen#slideFullscreen
+            .slide-list 
+              .slide-item.bg-fullscreen-1
+                .caption
+                  h5.mb-4 Homemade Cheesecake with Fresh Berries and Mint
+                  button.btn.btn-primary Order Now
+              .slide-item.bg-fullscreen-2
+                .caption
+                  h5.mb-4 Cheesecake with Chocolate Cookies and Cream Biscuits
+                  button.btn.btn-secondary Order Now
+              .slide-item.bg-fullscreen-3 
+                .caption
+                  h5.mb-4 Wedding Cake with Flowers Macarons and Blueberries
+                  button.btn.btn-info Order Now
+            .slide-nav
+              button.nav-prev
+                i.bx.bx-chevron-left 
+              button.nav-next
+                i.bx.bx-chevron-right 
+            ul.slide-dots
+              li.dot.is-active
+              li.dot
+              li.dot

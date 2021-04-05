@@ -15,6 +15,9 @@ header
       li.navbar-item.header-search-icon 
         a
          i.bx.bx-search
+      li.navbar-item.navbar-fullscreen 
+        a
+         i.bx.bx-fullscreen
       li.navbar-item.navbar-languages.has-dropdown
         a.dropdown-toggle(data-target="languages") EN
         #languages.dropdown-menu.dropdown-languages.slideInUp
@@ -27,9 +30,6 @@ header
               a
                 img(src=require('./../../assets/images/flags/vi.png').default).flag
                 span Vietnamese
-      li.navbar-item.navbar-fullscreen 
-        a
-         i.bx.bx-fullscreen
       li.navbar-item.navbar-notification.has-dropdown
         a.dropdown-toggle( aria-expanded='false' data-target='notificationDropdown')
           i.bx.bx-bell
@@ -123,7 +123,7 @@ header
                       | 5 mins ago
           .dropdown-footer.notification-footer
             a(onclick='event.stopPropagation()') Check all notifications
-      li.navbar-profile.has-dropdown
+      li.navbar-item.navbar-profile.has-dropdown
         a.dropdown-toggle.profile-toggle( aria-expanded='false' data-target='profileDropdown')
           img(src=require('./../../assets//images/profile.jpg').default alt='')
         #profileDropdown.dropdown-menu.dropdown-profile.slideInUp

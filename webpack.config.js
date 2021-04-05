@@ -88,7 +88,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/view/pages/toast.pug'
+            template: 'src/view/pages/slides.pug'
         }),
         new MiniCssExtractPlugin({
             filename: "styles.css"
