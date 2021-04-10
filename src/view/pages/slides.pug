@@ -4,21 +4,21 @@ block content
   h2.page-title.d-inline-block.mr-lg-2.mb-1 Slides
   +breadscrumb([['Home', '/index.html']], 'Slides')
   .row
-    .col-12 
+    .col-xl-6 
       .card 
         .card-body 
-          .card-title.font-weight-normal Slide Fullscreen  
-          .slide-fullscreen#slideFullscreen
+          .card-title.font-weight-normal Slider 1
+          .slide-fullscreen#slideFullscreen1 
             .slide-list 
-              .slide-item.bg-fullscreen-1
+              .slide-item.bg-1
                 .caption
                   h5.mb-4 Homemade Cheesecake with Fresh Berries and Mint
                   button.btn.btn-primary Order Now
-              .slide-item.bg-fullscreen-2
+              .slide-item.bg-2
                 .caption
                   h5.mb-4 Cheesecake with Chocolate Cookies and Cream Biscuits
                   button.btn.btn-secondary Order Now
-              .slide-item.bg-fullscreen-3 
+              .slide-item.bg-3 
                 .caption
                   h5.mb-4 Wedding Cake with Flowers Macarons and Blueberries
                   button.btn.btn-info Order Now
@@ -31,3 +31,29 @@ block content
               li.dot.is-active
               li.dot
               li.dot
+    .col-xl-6 
+        .card 
+          .card-body 
+            .card-title.font-weight-normal Slider 2
+            .slide-fullscreen#slideFullscreen2 
+              .slide-list 
+                .slide-item
+                  .bg-1
+                    .slide-item-content 
+                      h3 Side 1
+                      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus cupiditate incidunt sapiente nisi quidem adipisci
+                .slide-item
+                  .bg-2
+                    .slide-item-content 
+                      h3 Side 2
+                      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus cupiditate incidunt sapiente nisi quidem adipisci
+                .slide-item
+                  .bg-3
+                    .slide-item-content 
+                      h3 Side 3
+                      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus cupiditate incidunt sapiente nisi quidem adipisci
+              .slide-nav
+                button.nav-prev
+                  i.bx.bx-chevron-left 
+                button.nav-next
+                  i.bx.bx-chevron-right
