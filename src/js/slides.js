@@ -1,63 +1,89 @@
 export const makeSlideFullScreen1 = (el) => {
-  // const slideContainer = document.getElementById(el);
-  // const slideList = slideContainer.querySelectorAll('.slide-item');
-  // const navPrev = slideContainer.querySelector('.nav-prev');
-  // const navNext = slideContainer.querySelector('.nav-next');
-  // const dots = slideContainer.querySelector('.slide-dots');
-  // let currentIndex = 0;
-  // slideList[currentIndex].classList.add('active');
-  // let isAnimating = false;
+  const slideContainer = document.getElementById(el);
+  const slideList = [...slideContainer.querySelectorAll('.slide-item')];
+  const navPrev = slideContainer.querySelector('.nav-prev');
+  const navNext = slideContainer.querySelector('.nav-next');
+  const dots = slideContainer.querySelector('.slide-dots');
+  const auto = true;
+  const INTERVALTIME = 5000;
+  const SLIDETIME = 1000;
+  let currentIndex = 0;
+  let sliderInterval = null;
+  let clickable = true;
 
-  // const changeSlide = (dir) => {
-  //   if(isAnimating){
-  //     return;
-  //   }
-  //   isAnimating = true;
-  //   // Current Slide
-  //   const currentSlide = slideList[currentIndex];
+  const setDuration = () => {
+    slideList.forEach(slide => {
+      slide.setAttribute(
+        'style',
+         `animation-duration: ${SLIDETIME}ms`
+      )
+    })
+  }
+  const init = () => {
+    setDuration();
+    slideList[currentIndex].classList.add('active');
+  }
+  init();
 
-  //   if (dir === 'next') {
-  //     if (currentIndex >= slideList.length - 1) {
-  //       currentIndex = 0;
-  //     } else {
-  //       currentIndex++;
-  //     }
-  //   } else {
-  //     if (currentIndex === 0) {
-  //       currentIndex = slideList.length - 1;
-  //     } else {
-  //       currentIndex--;
-  //     }
-  //   }
+  const changeSlide = (forward) => {
+    if(!clickable){
+      return;
+    }
+    clickable = false;
+    // Current Slide
+    const currentSlide = slideList[currentIndex];
+    if (forward) {
+      if (currentIndex == slideList.length - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+    } else {
+      if (currentIndex === 0) {
+        currentIndex = slideList.length - 1;
+      } else {
+        currentIndex--;
+      }
+    }
+    currentSlide.classList.remove('active');
+    const nextSlide = slideList[currentIndex];
+    currentSlide.classList.add('is-hiding');
+    nextSlide.classList.add('active');
+    nextSlide.classList.add('is-showing');
+    
+    nextSlide.onanimationend = () => {
+      currentSlide.classList.remove('is-hiding');
+      nextSlide.classList.remove('is-showing');
+      clickable = true;
+    }
 
-  //   const showSlide = (slide) => {
-  //     slide.classList.add('is-showing');
-  //     slide.onanimationend = () => {
-  //       slide.classList.remove('is-showing');
-  //       slide.classList.add('active');
-  //     }
-  //   }
+  }
 
-  //   const hidelide = (slide) => {
-  //     slide.classList.remove('active');
-  //     slide.classList.add('is-hiding');
-  //     slide.onanimationend = () => {
-  //       slide.classList.remove('is-hiding');
-  //     }
-  //   }
-  //   // Next Slide
-  //   const nextSlide = slideList[currentIndex];
-  //   hidelide(currentSlide);
-  //   showSlide(nextSlide);
+  const resetAuto = () => {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => {
+      changeSlide(true);
+    }, INTERVALTIME)
+  }
 
-  // }
-  // navPrev.onclick = () => {
-  //   changeSlide('prev');
-  // }
-  // navNext.onclick = () => {
-  //   changeSlide('next');
-  // }
+  navPrev.onclick = () => {
+    changeSlide(false);
+    if(auto){
+      resetAuto();
+    }
+  }
+  navNext.onclick = () => {
+    changeSlide(true);
+    if(auto){
+      resetAuto();
+    }
+  }
 
+  if(auto){
+    sliderInterval = setInterval(() => {
+      changeSlide(true);
+    }, INTERVALTIME)
+  }
 }
 
 export const makeSlideFullScreen2 = (el) => {
@@ -84,7 +110,7 @@ export const makeSlideFullScreen2 = (el) => {
     slideContainer.appendChild(dots);
   }
 
-  const reset = () => {
+  const setDuration = () => {
     slideList.forEach(slide => {
       slide.setAttribute(
         'style',
@@ -95,7 +121,7 @@ export const makeSlideFullScreen2 = (el) => {
   }
 
   const initSlider = () => {
-    reset();
+    setDuration();
     slideList[0].classList.add('active');
     createDots();
   }
@@ -128,13 +154,27 @@ export const makeSlideFullScreen2 = (el) => {
       }
   }
 
+  const resetAuto = () => {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => {
+      changeSlide(true);
+    }, INTERVALTIME)
+  }
   navPrev.onclick = () => {
     changeSlide(false);
+    if(auto){
+      resetAuto();
+    }
   }
 
   navNext.onclick = () => {
     changeSlide(true);
+    if(auto){
+      resetAuto();
+    }
   }
+
+
   if(auto){
     sliderInterval = setInterval(() => {
       changeSlide(true);

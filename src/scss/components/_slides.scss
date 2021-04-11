@@ -14,8 +14,8 @@
 
 
     &.is-showing, &.is-hiding {
-      animation-fill-mode: both;
-      animation-duration: $transition;
+      visibility: visible;
+      opacity: 1;
     }
     &.is-showing {
       animation-name: scaleShow; 
@@ -111,10 +111,10 @@
   }
 }
 .bg-1, .bg-2, .bg-3 {
-  @extend .slide-item;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 .bg-1 {
   background-image: url('./../assets/images/carousel/fullscreen-1.jpg');
@@ -140,7 +140,17 @@
   }
 }
 
+#slideFullscreen1 {
+  .slide-item {
+    opacity: 0;
+    visibility: hidden;
+  }
 
+  .slide-item.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 #slideFullscreen2 {
   .slide-item.active{
@@ -149,11 +159,11 @@
 
   .slide-item-content {
     position: absolute;
-    bottom: 3rem;
-    left: 0;
+    top: 50%;
+    left: 50%;
     max-width: 50%;
     width: 100%;
-    transform: translateY(100%);
+    transform: translate(-50%, 100%);
     opacity: 0;
     transition: transform ease $transition 200ms, opacity ease $transition 200ms;
     background: rgba($color: #fff, $alpha: 0.8);
@@ -166,7 +176,7 @@
   }
 
   .slide-item.active .slide-item-content {
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
