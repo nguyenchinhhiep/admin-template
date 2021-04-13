@@ -1,9 +1,9 @@
-export const makeSlideFullScreen1 = (el) => {
-  const slideContainer = document.getElementById(el);
-  const slideList = [...slideContainer.querySelectorAll('.slide-item')];
-  const navPrev = slideContainer.querySelector('.nav-prev');
-  const navNext = slideContainer.querySelector('.nav-next');
-  const dots = slideContainer.querySelector('.slide-dots');
+export const makeSliderFullScreen1 = (el) => {
+  const sliderContainer = document.getElementById(el);
+  const sliderItems = [...sliderContainer.querySelectorAll('.slider-item')];
+  const navPrev = sliderContainer.querySelector('.nav-prev');
+  const navNext = sliderContainer.querySelector('.nav-next');
+  const dots = sliderContainer.querySelector('.slider-dots');
   const auto = true;
   const INTERVALTIME = 5000;
   const SLIDETIME = 1000;
@@ -12,7 +12,7 @@ export const makeSlideFullScreen1 = (el) => {
   let clickable = true;
 
   const setDuration = () => {
-    slideList.forEach(slide => {
+    sliderItems.forEach(slide => {
       slide.setAttribute(
         'style',
          `animation-duration: ${SLIDETIME}ms`
@@ -21,7 +21,7 @@ export const makeSlideFullScreen1 = (el) => {
   }
   const init = () => {
     setDuration();
-    slideList[currentIndex].classList.add('active');
+    sliderItems[currentIndex].classList.add('active');
   }
   init();
 
@@ -31,22 +31,22 @@ export const makeSlideFullScreen1 = (el) => {
     }
     clickable = false;
     // Current Slide
-    const currentSlide = slideList[currentIndex];
+    const currentSlide = sliderItems[currentIndex];
     if (forward) {
-      if (currentIndex == slideList.length - 1) {
+      if (currentIndex == sliderItems.length - 1) {
         currentIndex = 0;
       } else {
         currentIndex++;
       }
     } else {
       if (currentIndex === 0) {
-        currentIndex = slideList.length - 1;
+        currentIndex = sliderItems.length - 1;
       } else {
         currentIndex--;
       }
     }
     currentSlide.classList.remove('active');
-    const nextSlide = slideList[currentIndex];
+    const nextSlide = sliderItems[currentIndex];
     currentSlide.classList.add('is-hiding');
     nextSlide.classList.add('active');
     nextSlide.classList.add('is-showing');
@@ -86,11 +86,11 @@ export const makeSlideFullScreen1 = (el) => {
   }
 }
 
-export const makeSlideFullScreen2 = (el) => {
-  const slideContainer = document.getElementById(el);
-  const slideList = [...slideContainer.querySelectorAll('.slide-item')];
-  const navPrev = slideContainer.querySelector('.nav-prev');
-  const navNext = slideContainer.querySelector('.nav-next');
+export const makeSliderFullScreen2 = (el) => {
+  const sliderContainer = document.getElementById(el);
+  const sliderItems = [...sliderContainer.querySelectorAll('.slider-item')];
+  const navPrev = sliderContainer.querySelector('.nav-prev');
+  const navNext = sliderContainer.querySelector('.nav-next');
   const auto = true;
   const INTERVALTIME = 5000;
   const SLIDETIME = 500;
@@ -101,17 +101,17 @@ export const makeSlideFullScreen2 = (el) => {
 
   const createDots = () => {
     const dots = document.createElement('ul');
-    dots.classList.add('slide-dots');
+    dots.classList.add('slider-dots');
 
-    const dotItems = slideList.map(slide => {
+    const dotItems = sliderItems.map(slide => {
       return `<li class="dot"></li>`
     }).join("");
     dots.innerHTML = dotItems;
-    slideContainer.appendChild(dots);
+    sliderContainer.appendChild(dots);
   }
 
   const setDuration = () => {
-    slideList.forEach(slide => {
+    sliderItems.forEach(slide => {
       slide.setAttribute(
         'style',
          `transition: transform ease ${SLIDETIME}ms;
@@ -122,7 +122,7 @@ export const makeSlideFullScreen2 = (el) => {
 
   const initSlider = () => {
     setDuration();
-    slideList[0].classList.add('active');
+    sliderItems[0].classList.add('active');
     createDots();
   }
   initSlider();
@@ -132,23 +132,23 @@ export const makeSlideFullScreen2 = (el) => {
         return;
       }
       clickable = false;
-      currentSlide = slideContainer.querySelector('.slide-item.active');
-      const currentSlideIndex = slideList.indexOf(currentSlide);
+      currentSlide = sliderContainer.querySelector('.slider-item.active');
+      const currentSlideIndex = sliderItems.indexOf(currentSlide);
       if(forward){
-        const nextSlideIndex = (currentSlideIndex + 1) % slideList.length;
-        nextSlide = slideList[nextSlideIndex];
+        const nextSlideIndex = (currentSlideIndex + 1) % sliderItems.length;
+        nextSlide = sliderItems[nextSlideIndex];
         currentSlide.classList.add('slideOutLeft');
         nextSlide.classList.add('slideInRight','active');
       } 
       else {
-        const nextSlideIndex = (currentSlideIndex - 1 + slideList.length) % slideList.length;
-        nextSlide = slideList[nextSlideIndex];
+        const nextSlideIndex = (currentSlideIndex - 1 + sliderItems.length) % sliderItems.length;
+        nextSlide = sliderItems[nextSlideIndex];
         currentSlide.classList.add('slideOutRight');
         nextSlide.classList.add('slideInLeft','active');
       }
       nextSlide.onanimationend = () => {
         if(!clickable){
-          currentSlide.className = 'slide-item';
+          currentSlide.className = 'slider-item';
           clickable = true;
         }
       }
@@ -179,5 +179,73 @@ export const makeSlideFullScreen2 = (el) => {
     sliderInterval = setInterval(() => {
       changeSlide(true);
     }, INTERVALTIME)
+  }
+}
+
+
+export const makeSlider = (el) => {
+  const slider = document.getElementById(el);
+  const sliderStage = slider.querySelector('.slider-stage')
+  const sliderItems = [...slider.querySelectorAll('.slider-item')];
+  const navPrev = slider.querySelector('.nav-prev');
+  const navNext = slider.querySelector('.nav-next');
+  let currentIndex = 0;
+  let clickable = true;
+
+  const makeSlide = (numSlide) => {
+    const singleSlideItemWidth = slider.offsetWidth / numSlide;
+    console.log()
+    sliderItems.forEach(slide => {
+      slide.style.marginRight = '20px';
+      slide.style.width = `${singleSlideItemWidth - 20}px`;
+    });
+    sliderStage.style.width = `${singleSlideItemWidth * sliderItems.length}px`;
+
+    const changeSlide = (forward) => {
+      if(!clickable) return;
+      clickable = false;
+      if(forward){
+        if(currentIndex + numSlide >= sliderItems.length){
+          clickable = true;
+          return;
+        } else {
+          currentIndex++;
+        }
+        sliderStage.style.transform = `translateX(${-currentIndex * singleSlideItemWidth}px)`;
+      } else {
+        if(currentIndex === 0){
+          clickable = true;
+          return;
+        } else {
+          currentIndex--;
+        }
+        sliderStage.style.transform = `translateX(${-currentIndex * singleSlideItemWidth}px)`;
+      }
+    }
+
+    sliderStage.ontransitionend = () => {
+      clickable = true;
+    }
+
+    navPrev.onclick = () => {
+      changeSlide(false);
+    }
+
+    navNext.onclick = () => {
+      changeSlide(true);
+    }
+    
+  }
+
+  makeSlide(3)
+
+  window.onresize = () => {
+    if(window.innerWidth >= 930){
+      makeSlide(3);
+    } else if(window.innerWidth >= 640){
+      makeSlide(2);
+    } else {
+      makeSlide(1);
+    }
   }
 }

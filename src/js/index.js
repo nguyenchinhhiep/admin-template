@@ -4,7 +4,7 @@ import toggleSidebarHandler, {handleSidebarNav, handleSidebarOverlay, resizeScre
 import OverlayScrollbars from 'overlayscrollbars';
 import { handleCharts} from './charts';
 import { handleFullscreen, handleSearchInMobileView } from './header';
-import { makeSlideFullScreen1, makeSlideFullScreen2} from './slides';
+import { makeSliderFullScreen1, makeSliderFullScreen2, makeSlider} from './slides';
 
 
 window.onload = () => {
@@ -20,6 +20,7 @@ window.onload = () => {
     toggleSidebarHandler();
     resizeScreenHandler();
     handleCharts();
-    makeSlideFullScreen1('slideFullscreen1');
-    makeSlideFullScreen2('slideFullscreen2');
+    makeSliderFullScreen1('sliderFullscreen1');
+    makeSliderFullScreen2('sliderFullscreen2');
+    makeSlider('slider1');
 }
